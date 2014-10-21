@@ -15,10 +15,14 @@
  * @license    http://www.pimcore.org/license     New BSD License
  */
 
-class Tool_Targeting_Rule_List extends Pimcore_Model_List_Abstract {
+namespace Pimcore\Model\Tool\Targeting\Rule;
+
+use Pimcore\Model;
+
+class Listing extends Model\Listing\AbstractListing {
 
     /**
-     * Contains the results of the list. They are all an instance of Tool_Targeting_Rule
+     * Contains the results of the list. They are all an instance of Tool\Targeting\Rule
      *
      * @var array
      */
@@ -34,7 +38,8 @@ class Tool_Targeting_Rule_List extends Pimcore_Model_List_Abstract {
     }
 
     /**
-     * @param array $targets
+     * @param $targets
+     * @return $this
      */
     public function setTargets($targets)
     {

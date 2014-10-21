@@ -15,10 +15,14 @@
  * @license    http://www.pimcore.org/license     New BSD License
  */
 
-class Tool_Targeting_Persona_List extends Pimcore_Model_List_Abstract {
+namespace Pimcore\Model\Tool\Targeting\Persona;
+
+use Pimcore\Model;
+
+class Listing extends Model\Listing\AbstractListing {
 
     /**
-     * Contains the results of the list. They are all an instance of Tool_Targeting_Persona
+     * Contains the results of the list. They are all an instance of Tool\Targeting\Persona
      *
      * @var array
      */
@@ -34,7 +38,8 @@ class Tool_Targeting_Persona_List extends Pimcore_Model_List_Abstract {
     }
 
     /**
-     * @param array $personas
+     * @param $personas
+     * @return $this
      */
     public function setPersonas($personas)
     {
