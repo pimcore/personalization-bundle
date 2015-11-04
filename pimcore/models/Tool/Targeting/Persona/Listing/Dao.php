@@ -16,7 +16,7 @@ namespace Pimcore\Model\Tool\Targeting\Persona\Listing;
 
 use Pimcore\Model;
 
-class Resource extends Model\Listing\Resource\AbstractResource {
+class Dao extends Model\Listing\Dao\AbstractDao {
 
     /**
      * Loads a list of document-types for the specicifies parameters, returns an array of Document\DocType elements

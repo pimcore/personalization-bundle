@@ -17,7 +17,7 @@ namespace Pimcore\Model\Tool\Targeting\Rule;
 use Pimcore\Model;
 use Pimcore\Tool\Serialize;
 
-class Resource extends Model\Resource\AbstractResource {
+class Dao extends Model\Dao\AbstractDao {
 
     /**
      * @param null $id
