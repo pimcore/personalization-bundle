@@ -26,7 +26,4 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
  */
 class SessionConfigurator extends TargetingSessionBagListener implements SessionConfiguratorInterface
 {
-    public function configure(SessionInterface $session)
-    {
-    }
 }
