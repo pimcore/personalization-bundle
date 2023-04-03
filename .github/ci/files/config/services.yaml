@@ -24,8 +24,8 @@ services:
     # AppBundle\EventListener\TestListener:
     #     tags:
     #         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPreUpdate }
-
-    Pimcore\PersonalizationBundle\Installer:
+    
+    Pimcore\Bundle\PersonalizationBundle\Installer:
         public: true
         arguments:
             $bundle: "@=service('kernel').getBundle('PimcorePersonalizationBundle')"
