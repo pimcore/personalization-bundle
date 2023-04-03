@@ -2,11 +2,11 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
-        public: false
 
     #
     # INSTALLER
     #
+
     Pimcore\Bundle\PersonalizationBundle\Installer:
         public: true
         arguments:
@@ -19,6 +19,7 @@ services:
         tags: [ 'controller.service_arguments' ]
 
     # Newsletter Adapter
+
     pimcore.document.newsletter.factory.default:
         class: Pimcore\Document\Newsletter\DefaultAddressSourceAdapterFactory
         arguments:

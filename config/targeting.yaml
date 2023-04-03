@@ -2,7 +2,6 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
-        public: false
 
     #
     # TARGETING STORAGE
@@ -25,11 +24,14 @@ services:
         arguments:
             $saveHandler: '@Pimcore\Bundle\PersonalizationBundle\Targeting\Storage\Cookie\JWTCookieSaveHandler'
 
-    # Session Storage. If this is used, the pimcore_personalization.targeting.session.enabled entry
+    # Session Storage.
+    # If this is used, the pimcore_personalization.targeting.session.enabled entry
     # must be set to true to load the session configurator.
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\Storage\SessionStorage: ~
 
     # Database
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\Storage\DbStorage: ~
 
     # Example for redis
@@ -69,6 +71,7 @@ services:
             $filename: '%pimcore.geoip.db_file%'
 
     Pimcore\Bundle\PersonalizationBundle\Targeting\DataLoaderInterface: '@Pimcore\Bundle\PersonalizationBundle\Targeting\DataLoader'
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\DataLoader: ~
 
     Pimcore\Bundle\PersonalizationBundle\Targeting\DataProvider\GeoIp:
@@ -85,14 +88,15 @@ services:
     Pimcore\Bundle\PersonalizationBundle\Targeting\DataProvider\TargetingStorage: ~
 
     Pimcore\Bundle\PersonalizationBundle\Targeting\Service\VisitedPagesCounter: ~
-    Pimcore\Bundle\PersonalizationBundle\Targeting\DataProvider\VisitedPagesCounter: ~
 
+    Pimcore\Bundle\PersonalizationBundle\Targeting\DataProvider\VisitedPagesCounter: ~
 
     #
     # CONDITIONS
     #
 
     Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionFactoryInterface: '@Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionFactory'
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionFactory:
         arguments:
             $conditions: '%pimcore_personalization.targeting.conditions%'
@@ -103,19 +107,23 @@ services:
             $cache: '@pimcore.cache.pool'
 
     Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionMatcherInterface: '@Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionMatcher'
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionMatcher:
         arguments:
             $expressionLanguage: '@pimcore_personalization.targeting.condition_matcher.expression_language'
-
 
     #
     # ACTION HANDLERS
     #
 
     Pimcore\Bundle\PersonalizationBundle\Targeting\ActionHandler\ActionHandlerInterface: '@Pimcore\Bundle\PersonalizationBundle\Targeting\ActionHandler\DelegatingActionHandler'
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\ActionHandler\DelegatingActionHandler: ~
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\ActionHandler\AssignTargetGroup: ~
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\ActionHandler\Redirect: ~
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\ActionHandler\CodeSnippet: ~
 
 
@@ -185,6 +193,8 @@ services:
             - { name: kernel.event_listener, event: pimcore.admin.indexAction.settings, method: indexSettings }
 
     Pimcore\Bundle\PersonalizationBundle\Targeting\EventListener\Frontend\TargetingElementListener: ~
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\EventListener\Frontend\TargetingDocumentRendererListener: ~
+
     Pimcore\Bundle\PersonalizationBundle\Targeting\EventListener\RenderletListener: ~
 
