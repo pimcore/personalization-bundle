@@ -60,7 +60,7 @@ gets the instance of the `VisitorInfo` and needs to decide if it matches its con
 To fetch additional data about the visitor, a condition can request data from one or more `DataProvider` implementations.
 As an example the `Device` data provider is able to resolve and cache device info from the user agent string by using the
 `DeviceDetector` library. The `Operating System` condition just defines the `Device` data provider as dependency and can
-rely on the device data being added the the `VisitorInfo` before matching. The targeting engine takes care of requesting
+rely on the device data being added the `VisitorInfo` before matching. The targeting engine takes care of requesting
 data from a data provider only once per request, even if multiple conditions rely on its data.
 
 If a rule matches, a list of actions is applied. Example actions are issuing a redirect or assigning a target group to the
