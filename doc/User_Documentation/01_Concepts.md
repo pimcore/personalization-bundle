@@ -11,7 +11,7 @@ So, a *Target Group* is an entity which is used to personalize content for.
 
 Target groups are defined centrally, have an unique name and can have a description. 
 
-![Target Groups](../img/targeting/target-groups.jpg)
+![Target Groups](../img/user_docs/target-groups.jpg)
 
 See [Define Target Groups](./03_How_to_Personalize_Content/01_Define_Target_Groups.md) for further information. 
 
@@ -26,7 +26,7 @@ Available conditions are Browser, Country, GeoPoint, Device, Language, Operating
 Target Group, Time On Site, URL and Visited Pages Before. They can be combined with boolean operators (AND, OR, NOT) and
 brackets to archive complex conditions.  
 
-![Targeting Rules Conditions](../img/targeting/targeting-rules-conditions.jpg)
+![Targeting Rules Conditions](../img/user_docs/targeting-rules-conditions.jpg)
 
 Each targeting rule has name, may have a description and a scope: 
 * **Hit**: Actions are executed on every request. 
@@ -52,7 +52,7 @@ content elements, the content is inherited from the default variant of the docum
 When delivering content to the visitor, the best matching variant is picked by Pimcore. *Best matching* is in this case 
 is the variant of the target group with highest assignment count of the current visitor that has content set.   
 
-![Personalized Document Content](../img/targeting/personalized-documents.jpg)
+![Personalized Document Content](../img/user_docs/personalized-documents.jpg)
 
 See [Create Personalized Content](./03_How_to_Personalize_Content/05_Create_Personalized_Content.md) and
 [Deliver Personalized Content](./03_How_to_Personalize_Content/07_Deliver_Personalized_Content_and_Debug.md)

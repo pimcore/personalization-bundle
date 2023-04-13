@@ -18,14 +18,14 @@ an target group.
 ##### Assign Target Groups to Documents
 If there is a document, directly associate this document with a target group.
 
-![Tenant Switches Settings](../../img/targeting/examples_technical-guy1.jpg)
+![Tenant Switches Settings](../../img/user_docs/examples_technical-guy1.jpg)
 
 Every time a visitor visits that page, it gets the `technical-guy` target group assigned. Since one visit might be a 
 coincidence, multiple visits might hint for a technical interest of that visitor. 
 To filter out the coincidence visitors, a threshold can be defined at the target group. So not before the third visit, 
 the target group is actually assigned to the visitors profile. 
 
-![Technical Guy Settings](../../img/targeting/examples_technical-guy2.jpg)
+![Technical Guy Settings](../../img/user_docs/examples_technical-guy2.jpg)
   
 For a real-life example please have a look at our [public demo instance](https://demo.pimcore.fun/en/More-Stuff/Demo-Features/Personalization).
  
@@ -37,7 +37,7 @@ add a global targeting rule with a URL condition and an action to assign the cor
 To eliminate coincidence visits, e.g. an additional `time on site` condition can be added, like at the `profiling_football` 
 targeting rule at the demo.
 
-![Technical Guy Settings](../../img/targeting/examples_football1.jpg) 
+![Technical Guy Settings](../../img/user_docs/examples_football1.jpg) 
 
 The action should be executed on every request that matches the criteria - so use the scope `Hit` here. By doing so, 
 the assignment count of the target group gets increased every time and so a certain relevance for the target groups 
@@ -52,7 +52,7 @@ Similar to the category interest tracking, customer characteristics like favorit
 To do so, add for example a targeting rule that tracks product filtering for blue products and assigns corresponding 
 target groups like the `profiling_blue-lover` rule does in the demo. 
 
-![Profiling Blue Lover](../../img/targeting/examples_bluelover.jpg) 
+![Profiling Blue Lover](../../img/user_docs/examples_bluelover.jpg) 
 
 
 ### Classify customers based on behaviour
@@ -63,11 +63,11 @@ In addition to collecting customer characteristics, you also could classify cust
 For example once a new customer creates an additional order, it becomes a regular customer. See the `profiling_regular-customer`
 rule in the demo for details. 
 
-![Classify Regular Customer](../../img/targeting/examples_regular-customer.jpg) 
+![Classify Regular Customer](../../img/user_docs/examples_regular-customer.jpg) 
 
 In this case, it is important that the action is executed only once. Therefore choose `Visitor` as scope. 
 
-![Scope to Visitor](../../img/targeting/examples_regular-customer2.jpg) 
+![Scope to Visitor](../../img/user_docs/examples_regular-customer2.jpg) 
 
 
 These are only a few simple examples for visitor profiling with Pimcores targeting engine.
@@ -83,7 +83,7 @@ One example for content personalization is to redirect a visitor to a special la
 In our demo the example `personalize_redirect-to-landingpage` redirects visitors with language german that visited 5 pages
 on our website to a landing page. 
 
-![Redirect to Landingpage](../../img/targeting/examples_redirect.jpg) 
+![Redirect to Landingpage](../../img/user_docs/examples_redirect.jpg) 
 
 Of course this should happen not after every hit but only once per session, so scope is set to `session`. 
 
@@ -94,7 +94,7 @@ Another use case could be, that special users (e.g. mobile users from a certain 
 layout. See the `personalize_device-mobile` rule of our demo how this can be archived by injecting additional CSS code 
 to the page. 
 
-![Inject CSS](../../img/targeting/examples_mobile-device.jpg) 
+![Inject CSS](../../img/user_docs/examples_mobile-device.jpg) 
  
 
 ### Personalized content documents
@@ -108,5 +108,5 @@ In our demo several different variants of the portal page are set up - e.g. for 
 `handball` and others. 
 Just try archive the corresponding target groups and see what happens. 
 
-![Personalized Variant for Basketball](../../img/targeting/examples_basketball.jpg) 
+![Personalized Variant for Basketball](../../img/user_docs/examples_basketball.jpg) 
  

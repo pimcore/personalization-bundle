@@ -7,7 +7,7 @@ Thus, *Target Groups* are the core entities for personalizing content.
 
 Target groups are defined centrally, have an unique name, can have a description and may be deactivated. 
 
-![Target Groups](../../img/targeting/target-groups.jpg)
+![Target Groups](../../img/user_docs/target-groups.jpg)
 
 The threshold is needed in combination with [visitor profiling](./03_Visitor_Profiling.md). Based on the behavior, a 
 visitor can get target groups assigned. Thus a visitor can belong to multiple target groups with a specific assignment 

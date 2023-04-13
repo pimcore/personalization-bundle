@@ -6,7 +6,7 @@ behaviour.
 The result of the ongoing profiling process is a set of target groups, that are assigned with a certain assignment 
 relevance to the current visitor.
 
-![Associated Target Groups](../../img/targeting/target-groups-assignment.jpg)
+![Associated Target Groups](../../img/user_docs/target-groups-assignment.jpg)
 
 
 Pimcore provides two ways for profiling visitors based on their behavior. 
@@ -15,9 +15,9 @@ Pimcore provides two ways for profiling visitors based on their behavior.
 ### Associate Target Groups directly with Pimcore Documents
 
 It is possible to associate Pimcore documents directly with target groups. This can be configured in `Settings` tab of 
-each document as soon as there are target groups defined in in the system. 
+each document as soon as there are target groups defined in the system. 
 
-![Associate Target Groups with Documents](../../img/targeting/target-groups-documents.jpg)
+![Associate Target Groups with Documents](../../img/user_docs/target-groups-documents.jpg)
 
 Once one or more target groups are associated with a document, the selected target groups are assigned to the visitor 
 and the assignment count is increased by one, each time this document opened by the user.
@@ -28,7 +28,7 @@ and the assignment count is increased by one, each time this document opened by 
 *Global Targeting Rules* define a rule set based on which visitors can be profiled. Multiple conditions can be combined 
 to complex criteria for assigning target groups to the current visitor based on their behavior. 
  
-![Targeting Rules Action](../../img/targeting/targeting-rules-action.jpg)
+![Targeting Rules Action](../../img/user_docs/targeting-rules-action.jpg)
 
 When assigning a target group via global targeting rules, also a assignment weight can be specified. This increases the 
 assignment count of the target group respectively. 
