@@ -21,6 +21,6 @@ services:
     # Newsletter Adapter
 
     pimcore.document.newsletter.factory.default:
-        class: Pimcore\Document\Newsletter\DefaultAddressSourceAdapterFactory
+        class: Pimcore\Bundle\NewsletterBundle\Document\Newsletter\DefaultAddressSourceAdapterFactory
         arguments:
             - 'Pimcore\Bundle\PersonalizationBundle\Document\Newsletter\AddressSourceAdapter\DefaultAdapter'
