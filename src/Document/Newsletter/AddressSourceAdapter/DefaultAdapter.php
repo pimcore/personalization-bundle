@@ -16,7 +16,7 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\PersonalizationBundle\Document\Newsletter\AddressSourceAdapter;
 
-use Pimcore\Document\Newsletter\AddressSourceAdapter\DefaultAdapter as BaseDefaultAdapter;
+use Pimcore\Bundle\NewsletterBundle\Document\Newsletter\AddressSourceAdapter\DefaultAdapter as BaseDefaultAdapter;
 use Pimcore\Model\DataObject\ClassDefinition;
 use Pimcore\Model\DataObject\Listing;
 
