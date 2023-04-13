@@ -21,7 +21,7 @@ group on a document, but have content for different target groups in snippets or
 You can see which target groups were applied to which document in the profiler. As you can see in the screenshot below,
 the main document used the target group `basketball` while the footer snippet was rendered with the target group `female`.
 
-![Targeting Profiler Target Groups](../../../img/targeting_profiler_target_groups.png) 
+![Targeting Profiler Target Groups](../../img/targeting_profiler_target_groups.png) 
 
 For further debug information see below. 
 
@@ -37,7 +37,7 @@ deliver personalized content to the visitor.
    This opens up lots of possibilities such as restyling the page by injecting CSS, adding additional functionality by 
    adding JS Snippets or even injecting whole HTML code blocks.  
     
-![Targeting Rule Code Snippet Action](../../img/targeting/targeting-rules-action2.jpg)
+![Targeting Rule Code Snippet Action](../../img/user_docs/targeting-rules-action2.jpg)
 
 
 
@@ -47,10 +47,10 @@ The personalization configuration can become quite complex really quick. To get 
 for a certain request, which target groups are assigned and what data is collected, Pimcore injects several information 
 the Symfony profiler bar. 
 
-![Profiler Bar Popup](../../img/targeting/profiler1.jpg)
+![Profiler Bar Popup](../../img/user_docs/profiler1.jpg)
 
 On the detail page you can find all information about matching targeting rules, assigned target groups, chosen target 
 groups for document delivery, all stored visitor information and content of the visitor storage. 
 
-![Profiler Information](../../img/targeting/profiler2.jpg) 
+![Profiler Information](../../img/user_docs/profiler2.jpg) 
 

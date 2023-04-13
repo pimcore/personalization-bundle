@@ -226,4 +226,4 @@ Start by adding a new JS file implementing the admin UI panel for your condition
 As soon as you [configured Pimcore to load the newly created file](https://pimcore.com/docs/platform/Pimcore/Extending_Pimcore/Bundle_Developers_Guide/Loading_Service_Definitions)
 you should see your new condition in the list of available conditions:
 
-![Time of the Day Condition](../../img/targeting_custom_condition_timeoftheday.png)
+![Time of the Day Condition](../img/targeting_custom_condition_timeoftheday.png)
