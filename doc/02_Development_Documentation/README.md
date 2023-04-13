@@ -1,7 +1,7 @@
-# Targeting and Personalization
+# Development Documentation
 
 The following section describes the technical concepts and aspects of the Pimcore targeting engine. For usage 
-description and feature listing see your [user docs](../User_Documentation/01_Concepts.md)
+description and feature listing see your [user docs](../01_Usage/01_Concepts.md)
 first. 
 
 ## Setup
