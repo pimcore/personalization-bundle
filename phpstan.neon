@@ -1,5 +1,5 @@
 parameters:
-    level: 5
+    level: 6
     reportUnmatchedIgnoredErrors: false
     paths:
         - src
@@ -8,3 +8,7 @@ parameters:
     excludePaths:
         - src/Migrations/*
         - src/Tests/*
+    ignoreErrors:
+        - '~^Unsafe usage of new static\(\)~'
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: false

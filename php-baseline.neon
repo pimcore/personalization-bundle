@@ -1,0 +1,10 @@
+parameters:
+	ignoreErrors:
+	    -
+	        message: "#^Parameter \\#2 \\$eventDispatcher of method Pimcore\\\\Bundle\\\\PersonalizationBundle\\\\Targeting\\\\Condition\\\\EventDispatchingConditionInterface\\:\\:postMatch\\(\\) expects Symfony\\\\Component\\\\EventDispatcher\\\\EventDispatcherInterface, Symfony\\\\Contracts\\\\EventDispatcher\\\\EventDispatcherInterface given\\.$#"
+	        count: 1
+	        path: src/Targeting/ConditionMatcher.php
+	    -
+	        message: "#^Parameter \\#2 \\$eventDispatcher of method Pimcore\\\\Bundle\\\\PersonalizationBundle\\\\Targeting\\\\Condition\\\\EventDispatchingConditionInterface\\:\\:preMatch\\(\\) expects Symfony\\\\Component\\\\EventDispatcher\\\\EventDispatcherInterface, Symfony\\\\Contracts\\\\EventDispatcher\\\\EventDispatcherInterface given\\.$#"
+	        count: 1
+	        path: src/Targeting/ConditionMatcher.php
