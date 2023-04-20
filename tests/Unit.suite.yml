@@ -1,5 +1,8 @@
 actor: UnitTester
 suite_namespace: Pimcore\Bundle\PersonalizationBundle\Tests\Unit
 modules:
-    # enable helpers as array
-    enabled: []
+    enabled:
+        - \Pimcore\Bundle\PersonalizationBundle\Tests\Support\Helper\Unit
+        -   \Pimcore\Tests\Support\Helper\Pimcore:
+                connect_db: true
+                cache_router: false
