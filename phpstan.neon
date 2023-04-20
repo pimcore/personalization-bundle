@@ -1,0 +1,18 @@
+parameters:
+    level: 6
+    reportUnmatchedIgnoredErrors: false
+    paths:
+        - src
+    bootstrapFiles:
+        - phpstan-bootstrap.php
+    excludePaths:
+        - src/Migrations/*
+        - src/Tests/*
+    ignoreErrors:
+        - '~^Unsafe usage of new static\(\)~'
+    checkGenericClassInNonGenericObjectType: false
+    checkMissingIterableValueType: false
+
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - phpstan-baseline.neon
