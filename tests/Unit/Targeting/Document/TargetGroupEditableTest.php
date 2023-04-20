@@ -94,7 +94,7 @@ class TargetGroupEditableTest extends ModelTestCase
 
     public function reloadPage(): void
     {
-        $this->testPage = \Pimcore\Model\Document\Page::getById($this->testPage->getId(), ['force' => true]);
+        $this->testPage = Page::getById($this->testPage->getId(), ['force' => true]);
     }
 
     // Create Target Group
