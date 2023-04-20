@@ -57,9 +57,6 @@ pimcore:
         archive_treshold: '30'
         archive_alternative_database: ''
 pimcore_admin:
-    assets:
-        hide_edit_image: false
-        disable_tree_preview: false
     branding:
         color_login_screen: ''
         color_admin_interface: ''
