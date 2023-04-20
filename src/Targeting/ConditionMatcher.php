@@ -24,7 +24,7 @@ use Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionMatcher\ExpressionBu
 use Pimcore\Bundle\PersonalizationBundle\Targeting\Model\VisitorInfo;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class ConditionMatcher implements ConditionMatcherInterface
 {
