@@ -23,8 +23,8 @@ use Pimcore\Bundle\PersonalizationBundle\Targeting\Condition\VariableConditionIn
 use Pimcore\Bundle\PersonalizationBundle\Targeting\ConditionMatcher\ExpressionBuilder;
 use Pimcore\Bundle\PersonalizationBundle\Targeting\Model\VisitorInfo;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
 class ConditionMatcher implements ConditionMatcherInterface
 {

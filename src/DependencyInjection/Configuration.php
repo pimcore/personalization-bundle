@@ -32,7 +32,7 @@ class Configuration implements ConfigurationInterface
 
         /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->getRootNode();
-        
+
         $rootNode
             ->children()
                 ->arrayNode('targeting')
