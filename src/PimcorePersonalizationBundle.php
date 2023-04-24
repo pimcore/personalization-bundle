@@ -22,9 +22,12 @@ use Pimcore\Bundle\PersonalizationBundle\DependencyInjection\Compiler\DebugStopw
 use Pimcore\Bundle\PersonalizationBundle\DependencyInjection\Compiler\TargetingOverrideHandlersPass;
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
+use Pimcore\HttpKernel\Bundle\DependentBundleInterface;
+use Pimcore\HttpKernel\BundleCollection\BundleCollection;
+use Pimcore\Bundle\AdminBundle\PimcoreAdminBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface
+class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface, DependentBundleInterface
 {
     use BundleAdminClassicTrait;
     use PackageVersionTrait;
@@ -86,5 +89,10 @@ class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements Pimc
     public function getPath(): string
     {
         return \dirname(__DIR__);
+    }
+
+    public static function registerDependentBundles(BundleCollection $collection): void
+    {
+        $collection->addBundle(new PimcoreAdminBundle(), 60);
     }
 }
