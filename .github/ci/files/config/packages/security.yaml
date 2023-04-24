@@ -3,7 +3,7 @@ security:
 
     providers:
         pimcore_admin:
-            id: Pimcore\Bundle\AdminBundle\Security\User\UserProvider
+            id: Pimcore\Security\User\UserProvider
 
     firewalls:
         dev:
@@ -25,6 +25,7 @@ security:
         - { path: ^/admin/login$, roles: PUBLIC_ACCESS }
         - { path: ^/admin/login/(login|lostpassword|deeplink|csrf-token)$, roles: PUBLIC_ACCESS }
         - { path: ^/admin, roles: ROLE_PIMCORE_USER }
+        - { path: ^/asset/webdav, roles: ROLE_PIMCORE_USER }
 
     role_hierarchy:
         # Pimcore admin  // DO NOT CHANGE!
