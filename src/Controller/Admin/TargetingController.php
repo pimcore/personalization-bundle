@@ -21,6 +21,7 @@ use Pimcore\Bundle\PersonalizationBundle\Model\Tool\Targeting;
 use Pimcore\Bundle\PersonalizationBundle\Model\Tool\Targeting\TargetGroup;
 use Pimcore\Cache\Core\CoreCacheHandler;
 use Pimcore\Controller\KernelControllerEventInterface;
+use Pimcore\Controller\Traits\JsonHelperTrait;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
@@ -34,6 +35,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TargetingController extends UserAwareController implements KernelControllerEventInterface
 {
     // RULES
+    use JsonHelperTrait;
     private function correctName(string $name): string
     {
         return preg_replace('/[#?*:\\\\<>|"%&@=;+]/', '-', $name);
@@ -63,7 +65,7 @@ class TargetingController extends UserAwareController implements KernelControlle
             ];
         }
 
-        return $this->adminJson($targets);
+        return $this->jsonResponse($targets);
     }
 
     /**
@@ -79,7 +81,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         $target->setName($this->correctName($request->get('name')));
         $target->save();
 
-        return $this->adminJson(['success' => true, 'id' => $target->getId()]);
+        return $this->jsonResponse(['success' => true, 'id' => $target->getId()]);
     }
 
     /**
@@ -99,7 +101,7 @@ class TargetingController extends UserAwareController implements KernelControlle
             $success = true;
         }
 
-        return $this->adminJson(['success' => $success]);
+        return $this->jsonResponse(['success' => $success]);
     }
 
     /**
@@ -117,7 +119,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         }
         $target = $target->getObjectVars();
 
-        return $this->adminJson($target);
+        return $this->jsonResponse($target);
     }
 
     /**
@@ -141,7 +143,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         $target->setActions($data['actions']);
         $target->save();
 
-        return $this->adminJson(['success' => true]);
+        return $this->jsonResponse(['success' => true]);
     }
 
     /**
@@ -174,7 +176,7 @@ class TargetingController extends UserAwareController implements KernelControlle
             } else {
                 $return['message'] = sprintf('Rule %d was not found', (int)$id);
 
-                return $this->adminJson($return, 400);
+                return $this->jsonResponse($return, 400);
             }
         }
 
@@ -185,7 +187,7 @@ class TargetingController extends UserAwareController implements KernelControlle
 
         $return['success'] = true;
 
-        return $this->adminJson($return);
+        return $this->jsonResponse($return);
     }
 
     // TARGET GROUPS
@@ -222,7 +224,7 @@ class TargetingController extends UserAwareController implements KernelControlle
             ];
         }
 
-        return $this->adminJson($targetGroups);
+        return $this->jsonResponse($targetGroups);
     }
 
     /**
@@ -242,7 +244,7 @@ class TargetingController extends UserAwareController implements KernelControlle
 
         $cache->clearTag('target_groups');
 
-        return $this->adminJson(['success' => true, 'id' => $targetGroup->getId()]);
+        return $this->jsonResponse(['success' => true, 'id' => $targetGroup->getId()]);
     }
 
     /**
@@ -265,7 +267,7 @@ class TargetingController extends UserAwareController implements KernelControlle
 
         $cache->clearTag('target_groups');
 
-        return $this->adminJson(['success' => $success]);
+        return $this->jsonResponse(['success' => $success]);
     }
 
     /**
@@ -283,7 +285,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         }
         $targetGroup = $targetGroup->getObjectVars();
 
-        return $this->adminJson($targetGroup);
+        return $this->jsonResponse($targetGroup);
     }
 
     /**
@@ -308,7 +310,7 @@ class TargetingController extends UserAwareController implements KernelControlle
 
         $cache->clearTag('target_groups');
 
-        return $this->adminJson(['success' => true]);
+        return $this->jsonResponse(['success' => true]);
     }
 
     public function onKernelControllerEvent(ControllerEvent $event): void
