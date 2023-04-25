@@ -20,7 +20,6 @@ use Pimcore\Bundle\AdminBundle\Controller\Admin\Document\PageController;
 use Pimcore\Bundle\PersonalizationBundle\Model\Document\Targeting\TargetingDocumentInterface;
 use Pimcore\Document\StaticPageGenerator;
 use Pimcore\Model\Document;
-use Pimcore\Controller\Traits\JsonHelperTrait;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,7 +31,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class TargetingPageController extends PageController
 {
-    use JsonHelperTrait;
     /**
      * @Route("/clear-targeting-editable-data", name="pimcore_bundle_personalization_clear_targeting_page_editable_data", methods={"PUT"})
      *
@@ -62,7 +60,7 @@ class TargetingPageController extends PageController
 
         $this->saveToSession($doc, $request->getSession(), true);
 
-        return $this->jsonResponse([
+        return $this->adminJson([
             'success' => true,
         ]);
     }

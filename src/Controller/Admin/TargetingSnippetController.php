@@ -19,7 +19,6 @@ namespace Pimcore\Bundle\PersonalizationBundle\Controller\Admin;
 use Pimcore\Bundle\AdminBundle\Controller\Admin\Document\SnippetController;
 use Pimcore\Bundle\PersonalizationBundle\Model\Document\Targeting\TargetingDocumentInterface;
 use Pimcore\Model\Document;
-use Pimcore\Controller\Traits\JsonHelperTrait;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,7 +30,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class TargetingSnippetController extends SnippetController
 {
-    use JsonHelperTrait;
     /**
      * @Route("/clear-targeting-editable-data", name="pimcore_bundle_personalization_clear_targeting_snippet_editable_data", methods={"PUT"})
      *
@@ -61,7 +59,7 @@ class TargetingSnippetController extends SnippetController
 
         $this->saveToSession($doc, $request->getSession(), true);
 
-        return $this->jsonResponse([
+        return $this->adminJson([
             'success' => true,
         ]);
     }
