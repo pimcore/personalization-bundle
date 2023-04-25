@@ -16,17 +16,20 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\PersonalizationBundle;
 
-use Pimcore\Bundle\AdminBundle\Support\BundleAdminSupportTrait;
-use Pimcore\Bundle\AdminBundle\Support\PimcoreBundleAdminSupportInterface;
+use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
+use Pimcore\Extension\Bundle\Traits\BundleAdminClassicTrait;
 use Pimcore\Bundle\PersonalizationBundle\DependencyInjection\Compiler\DebugStopwatchPass;
 use Pimcore\Bundle\PersonalizationBundle\DependencyInjection\Compiler\TargetingOverrideHandlersPass;
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
+use Pimcore\HttpKernel\Bundle\DependentBundleInterface;
+use Pimcore\HttpKernel\BundleCollection\BundleCollection;
+use Pimcore\Bundle\AdminBundle\PimcoreAdminBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminSupportInterface
+class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface, DependentBundleInterface
 {
-    use BundleAdminSupportTrait;
+    use BundleAdminClassicTrait;
     use PackageVersionTrait;
 
     // @TODO Enable when bundle is moved to own repo
@@ -86,5 +89,10 @@ class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements Pimc
     public function getPath(): string
     {
         return \dirname(__DIR__);
+    }
+
+    public static function registerDependentBundles(BundleCollection $collection): void
+    {
+        $collection->addBundle(new PimcoreAdminBundle(), 60);
     }
 }
