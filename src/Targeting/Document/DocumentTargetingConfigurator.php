@@ -17,7 +17,6 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\PersonalizationBundle\Targeting\Document;
 
-use Pimcore\Security\User\UserLoader;
 use Pimcore\Bundle\PersonalizationBundle\Model\Document\Targeting\TargetingDocumentInterface;
 use Pimcore\Bundle\PersonalizationBundle\Model\Tool\Targeting\TargetGroup;
 use Pimcore\Bundle\PersonalizationBundle\Targeting\VisitorInfoStorageInterface;
@@ -25,6 +24,7 @@ use Pimcore\Cache\Core\CoreCacheHandler;
 use Pimcore\Http\RequestHelper;
 use Pimcore\Model\Document;
 use Pimcore\Model\Document\PageSnippet;
+use Pimcore\Security\User\UserLoader;
 
 class DocumentTargetingConfigurator
 {

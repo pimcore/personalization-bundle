@@ -16,12 +16,12 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\PersonalizationBundle\Controller\Admin;
 
-use  Pimcore\Controller\UserAwareController;
-use Pimcore\Bundle\PersonalizationBundle\Model\Tool\Targeting;
+use  Pimcore\Bundle\PersonalizationBundle\Model\Tool\Targeting;
 use Pimcore\Bundle\PersonalizationBundle\Model\Tool\Targeting\TargetGroup;
 use Pimcore\Cache\Core\CoreCacheHandler;
 use Pimcore\Controller\KernelControllerEventInterface;
 use Pimcore\Controller\Traits\JsonHelperTrait;
+use Pimcore\Controller\UserAwareController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
@@ -36,6 +36,7 @@ class TargetingController extends UserAwareController implements KernelControlle
 {
     // RULES
     use JsonHelperTrait;
+
     private function correctName(string $name): string
     {
         return preg_replace('/[#?*:\\\\<>|"%&@=;+]/', '-', $name);
