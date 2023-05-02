@@ -33,36 +33,37 @@ pimcore.bundle.personalization.startup = Class.create({
         let menu = e.detail.menu;
         const user = pimcore.globalmanager.get('user');
         const perspectiveCfg = pimcore.globalmanager.get("perspective");
-
-        if (user.isAllowed("targeting") && perspectiveCfg.inToolbar("marketing.targeting")) {
-            menu.marketing.items.push({
-                text: t("personalization") + " / " + t("targeting"),
-                iconCls: "pimcore_nav_icon_usergroup",
-                itemId: 'pimcore_menu_marketing_personalization',
-                hideOnClick: false,
-                menu: {
-                    cls: "pimcore_navigation_flyout",
-                    shadow: false,
-                    items: [
-                        {
-                            text: t("global_targeting_rules"),
-                            iconCls: "pimcore_nav_icon_targeting",
-                            itemId: 'pimcore_menu_marketing_personalization_global_targeting_rules',
-                            handler: this.showTargetingRules
-                        }, {
-                            text: t('target_groups'),
-                            iconCls: "pimcore_nav_icon_target_groups",
-                            itemId: 'pimcore_menu_marketing_personalization_target_groups',
-                            handler: this.showTargetGroups
-                        }, {
-                            text: t("targeting_toolbar"),
-                            iconCls: "pimcore_nav_icon_targeting_toolbar",
-                            itemId: 'pimcore_menu_marketing_personalization_targeting_toolbar',
-                            handler: this.showTargetingToolbarSettings
-                        }
-                    ]
-                }
-            });
+        if(menu.marketing) {
+            if (user.isAllowed("targeting") && perspectiveCfg.inToolbar("marketing.targeting")) {
+                menu.marketing.items.push({
+                    text: t("personalization") + " / " + t("targeting"),
+                    iconCls: "pimcore_nav_icon_usergroup",
+                    itemId: 'pimcore_menu_marketing_personalization',
+                    hideOnClick: false,
+                    menu: {
+                        cls: "pimcore_navigation_flyout",
+                        shadow: false,
+                        items: [
+                            {
+                                text: t("global_targeting_rules"),
+                                iconCls: "pimcore_nav_icon_targeting",
+                                itemId: 'pimcore_menu_marketing_personalization_global_targeting_rules',
+                                handler: this.showTargetingRules
+                            }, {
+                                text: t('target_groups'),
+                                iconCls: "pimcore_nav_icon_target_groups",
+                                itemId: 'pimcore_menu_marketing_personalization_target_groups',
+                                handler: this.showTargetGroups
+                            }, {
+                                text: t("targeting_toolbar"),
+                                iconCls: "pimcore_nav_icon_targeting_toolbar",
+                                itemId: 'pimcore_menu_marketing_personalization_targeting_toolbar',
+                                handler: this.showTargetingToolbarSettings
+                            }
+                        ]
+                    }
+                });
+            }
         }
     },
 
