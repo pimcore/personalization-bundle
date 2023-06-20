@@ -1,11 +1,11 @@
 ---
 global_targeting_rule: Global Targeting Rule
 global_targeting_rules: Global Targeting Rules
-personalization: Personnalisation
-targeting: Ciblage
+personalization: Personalization
+targeting: Targeting
 targeting_toolbar: Targeting Toolbar
-target_groups: Groupes cible
-targeting_visitor: Visiteur
+target_groups: Target Groups
+targeting_visitor: Visitor
 targeting_condition_visited_page_before_piwik_data_warning: This condition fetches
   data synchronously from Piwik which can be quite slow. Use with care!
 targeting_condition_visited_page_before_piwik_not_configured_warning: This condition
