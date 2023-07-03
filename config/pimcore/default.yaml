@@ -37,3 +37,8 @@ pimcore:
                 map:
                     targetGroup: Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroup
                     targetGroupMultiselect: Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroupMultiselect
+
+    models:
+        class_overrides:
+            'Pimcore\Model\Document\Page': 'Pimcore\Bundle\PersonalizationBundle\Model\Document\Page'
+            'Pimcore\Model\Document\Snippet': 'Pimcore\Bundle\PersonalizationBundle\Model\Document\Snippet'
