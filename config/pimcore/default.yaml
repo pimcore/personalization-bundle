@@ -28,16 +28,15 @@ pimcore:
         type_definitions:
             map:
                 snippet:
-                    class: Pimcore\Bundle\PersonalizationBundle\Model\Document\Snippet
+                    class: \Pimcore\Bundle\PersonalizationBundle\Model\Document\Snippet
                 page:
-                    class: Pimcore\Bundle\PersonalizationBundle\Model\Document\Page
+                    class: \Pimcore\Bundle\PersonalizationBundle\Model\Document\Page
     objects:
         class_definitions:
             data:
                 map:
-                    targetGroup: Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroup
-                    targetGroupMultiselect: Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroupMultiselect
-
+                    targetGroup: \Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroup
+                    targetGroupMultiselect: \Pimcore\Model\DataObject\ClassDefinition\Data\TargetGroupMultiselect
     models:
         class_overrides:
             'Pimcore\Model\Document\Page': 'Pimcore\Bundle\PersonalizationBundle\Model\Document\Page'
