@@ -111,6 +111,7 @@ pimcore.bundle.personalization.startup = Class.create({
 
     assignTargetGroupToPage: function (e) {
         const document = e.detail.document;
+        let documentTargetIds = (document.data["targetGroupIds"]) ??  '';
 
         const assignTargetGroupBlock = {
             xtype: 'fieldset',
@@ -130,7 +131,7 @@ pimcore.bundle.personalization.startup = Class.create({
                     name: 'targetGroupIds',
                     width: 700,
                     //listWidth: 200,
-                    value: document.data["targetGroupIds"].split(',').map(Number).filter(item => item),
+                    value: documentTargetIds.split(',').map(Number).filter(item => item),
                     minHeight: 100
                 })
             ]
