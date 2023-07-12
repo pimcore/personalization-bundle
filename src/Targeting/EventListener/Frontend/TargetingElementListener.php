@@ -50,7 +50,7 @@ class TargetingElementListener implements EventSubscriberInterface, LoggerAwareI
     public static function getSubscribedEvents(): array
     {
         return [
-            KernelEvents::CONTROLLER => ['onKernelController', 30], // has to be after DocumentFallbackListener
+            KernelEvents::CONTROLLER => ['onKernelController', 29], // has to be after DocumentFallbackListener
         ];
     }
 
