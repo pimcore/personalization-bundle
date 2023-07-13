@@ -65,7 +65,7 @@ class TargetGroupEditableTest extends ModelTestCase
         //Test the value of first target group editable again
         $this->testDataHelper->assertInput($this->testPage, $targetGroupEditableName1, $targetGroup1EditableSeed);
 
-        //$this->reloadPage();
+        $this->reloadPage();
 
         // Test after reloading
         $this->testDataHelper->assertInput($this->testPage, $targetGroupEditableName1, $targetGroup1EditableSeed);
