@@ -17,6 +17,7 @@ declare(strict_types=1);
 
 namespace Pimcore\Bundle\PersonalizationBundle\Tests\Unit\Targeting\Code;
 
+
 use Codeception\Test\Unit;
 use Pimcore\Bundle\PersonalizationBundle\Targeting\Code\CodeBlock;
 
@@ -39,9 +40,9 @@ EOL;
     {
         $block = new CodeBlock($this->defaultParts);
 
-        $this->assertEquals($this->defaultResult, $block->asString());
-        $this->assertEquals($this->defaultResult, (string)$block);
-        $this->assertEquals($this->defaultResult, $block->__toString());
+        $this->assertSame($this->defaultResult, $block->asString());
+        $this->assertSame($this->defaultResult, (string)$block);
+        $this->assertSame($this->defaultResult, $block->__toString());
     }
 
     public function testSetParts(): void
@@ -52,8 +53,8 @@ EOL;
 
         $block->setParts($this->defaultParts);
 
-        $this->assertEquals($this->defaultParts, $block->getParts());
-        $this->assertEquals($this->defaultResult, $block->asString());
+        $this->assertSame($this->defaultParts, $block->getParts());
+        $this->assertSame($this->defaultResult, $block->asString());
     }
 
     public function testAppend(): void
@@ -64,13 +65,13 @@ EOL;
 
         $expected = $this->defaultResult . "\nfoofoo";
 
-        $this->assertEquals($expected, $block->asString());
+        $this->assertSame($expected, $block->asString());
 
         $block->append(['123', '456']);
 
         $expected = $expected. "\n123\n456";
 
-        $this->assertEquals($expected, $block->asString());
+        $this->assertSame($expected, $block->asString());
     }
 
     public function testPrepend(): void
@@ -81,12 +82,12 @@ EOL;
 
         $expected = "barbar\n" . $this->defaultResult;
 
-        $this->assertEquals($expected, $block->asString());
+        $this->assertSame($expected, $block->asString());
 
         $block->prepend(['654', '321']);
 
         $expected = "654\n321\n" . $expected;
 
-        $this->assertEquals($expected, $block->asString());
+        $this->assertSame($expected, $block->asString());
     }
 }
