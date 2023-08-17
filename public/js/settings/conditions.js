@@ -261,7 +261,7 @@ pimcore.bundle.personalization.settings.conditions = (function () {
                             const address = searchfield.getValue();
                             pimcore.helpers.sendRequest(
                                 "GET",
-                                pimcore.settings.targeting.conditions.getSearchUrl(address),
+                                pimcore.bundle.personalization.settings.conditions.getSearchUrl(address),
                                 function (response) {
                                     const data = Ext.decode(response.responseText);
                                     if (data[0].lat !== null && data[0].lon !== null) {
