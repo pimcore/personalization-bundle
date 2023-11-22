@@ -133,8 +133,6 @@ class JWTCookieSaveHandler extends AbstractCookieSaveHandler
             $builder->expiresAt($expire);
         }
 
-        $builder->getToken($this->config->signer(), $this->config->signingKey());
-
         return $builder;
     }
 }
