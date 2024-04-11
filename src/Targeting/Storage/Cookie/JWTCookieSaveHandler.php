@@ -118,19 +118,18 @@ class JWTCookieSaveHandler extends AbstractCookieSaveHandler
     {
         $time = new \DateTimeImmutable();
 
-        $builder = $this->config->builder();
-        $builder
+        $builder = $this->config->builder()
             ->issuedAt($time)
             ->withClaim(self::CLAIM_TARGETING_DATA, $data);
 
         if (0 === $expire) {
-            $builder->expiresAt($time->modify('+30 minutes')); // expire in 30 min
+            $builder = $builder->expiresAt($time->modify('+30 minutes')); // expire in 30 min
         } elseif (is_int($expire) && $expire > 0) {
             $expire = new \DateTimeImmutable('@'. $expire);
-            $builder->expiresAt($expire);
+            $builder = $builder->expiresAt($expire);
         } elseif ($expire instanceof \DateTimeInterface) {
             $expire = new \DateTimeImmutable('@'. $expire->getTimestamp());
-            $builder->expiresAt($expire);
+            $builder = $builder->expiresAt($expire);
         }
 
         return $builder;
