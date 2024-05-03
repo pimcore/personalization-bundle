@@ -88,9 +88,6 @@ class CookieStorage implements TargetingStorageInterface
         return isset($this->data[$scope][$name]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function get(VisitorInfo $visitorInfo, string $scope, string $name, mixed $default = null): mixed
     {
         $this->loadData($visitorInfo, $scope);

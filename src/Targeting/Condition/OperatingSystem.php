@@ -28,7 +28,6 @@ class OperatingSystem extends AbstractVariableCondition implements DataProviderD
     /**
      * Mapping from admin UI values to DeviceDetector results
      *
-     * @var array
      */
     protected static array $osMapping = [
         'MAC' => 'macos',
@@ -43,33 +42,21 @@ class OperatingSystem extends AbstractVariableCondition implements DataProviderD
         $this->system = $system;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static($config['system'] ?? null);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDataProviderKeys(): array
     {
         return [Device::PROVIDER_KEY];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return !empty($this->system);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         $device = $visitorInfo->get(Device::PROVIDER_KEY);

@@ -56,7 +56,6 @@ class DocumentTargetingConfigurator
      * Configure target group to use on the document by reading the most relevant
      * target group from the visitor info.
      *
-     * @param Document $document
      */
     public function configureTargetGroup(Document $document): void
     {
@@ -89,9 +88,7 @@ class DocumentTargetingConfigurator
     /**
      * Handle _ptg admin param here only if there's a valid user session
      *
-     * @param TargetingDocumentInterface $document
      *
-     * @return bool
      */
     private function isConfiguredByAdminParam(TargetingDocumentInterface $document): bool
     {
@@ -157,7 +154,6 @@ class DocumentTargetingConfigurator
      * Resolve all target groups which were matched and which are valid for
      * the document
      *
-     * @param Document $document
      *
      * @return TargetGroup[]
      */
@@ -188,9 +184,7 @@ class DocumentTargetingConfigurator
      * Resolves valid target groups for a document. A target group is seen as valid
      * if it has at least one element configured for that target group.
      *
-     * @param Document $document
      *
-     * @return array
      */
     public function getTargetGroupsForDocument(Document $document): array
     {

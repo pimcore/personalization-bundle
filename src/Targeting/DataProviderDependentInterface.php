@@ -29,7 +29,6 @@ interface DataProviderDependentInterface
     /**
      * Returns keys of data providers which this component depends on.
      *
-     * @return array
      */
     public function getDataProviderKeys(): array;
 }

@@ -24,9 +24,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class Redirect implements ActionHandlerInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function apply(VisitorInfo $visitorInfo, array $action, Rule $rule = null): void
     {
         $url = $action['url'] ?? null;

@@ -143,11 +143,6 @@ class TargetingDataCollector
         return $targetGroups;
     }
 
-    /**
-     * @param Document|null $document
-     *
-     * @return array|null
-     */
     public function collectDocumentTargetGroup(Document $document = null): ?array
     {
         if (!$document instanceof TargetingDocumentInterface) {

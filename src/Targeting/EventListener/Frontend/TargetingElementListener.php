@@ -44,9 +44,6 @@ class TargetingElementListener implements EventSubscriberInterface, LoggerAwareI
     ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function getSubscribedEvents(): array
     {
         return [

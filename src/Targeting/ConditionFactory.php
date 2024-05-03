@@ -44,9 +44,6 @@ class ConditionFactory implements ConditionFactoryInterface
         $this->conditions = $conditions;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function build(array $config): ConditionInterface
     {
         /** @var string|null $type */

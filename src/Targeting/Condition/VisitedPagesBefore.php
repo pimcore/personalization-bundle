@@ -34,33 +34,21 @@ class VisitedPagesBefore extends AbstractVariableCondition implements DataProvid
         $this->count = $count;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static($config['number'] ?? 0);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDataProviderKeys(): array
     {
         return [VisitedPagesCounter::PROVIDER_KEY];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return $this->count > 0;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         /** @var VisitedPagesCounterService $counter */
@@ -76,18 +64,12 @@ class VisitedPagesBefore extends AbstractVariableCondition implements DataProvid
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function postMatch(VisitorInfo $visitorInfo, EventDispatcherInterface $eventDispatcher): void
     {
         // emit event which instructs VisitedPagesCountListener to increment the count after matching
         $eventDispatcher->dispatch(new GenericEvent(), TargetingEvents::VISITED_PAGES_COUNT_MATCH);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function preMatch(VisitorInfo $visitorInfo, EventDispatcherInterface $eventDispatcher): void
     {
         // noop

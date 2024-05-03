@@ -69,10 +69,7 @@ final class DefaultAdapter extends BaseDefaultAdapter
     /**
      * Handle target group filters
      *
-     * @param ClassDefinition $class
-     * @param array $conditions
      *
-     * @return array
      */
     protected function addTargetGroupConditions(ClassDefinition $class, array $conditions): array
     {

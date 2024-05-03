@@ -23,33 +23,21 @@ class Url extends AbstractVariableCondition implements ConditionInterface
 {
     private ?string $pattern = null;
 
-    /**
-     * @param null|string $pattern
-     */
     public function __construct(string $pattern = null)
     {
         $this->pattern = $pattern;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static($config['url'] ?? null);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return !empty($this->pattern);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         $request = $visitorInfo->getRequest();

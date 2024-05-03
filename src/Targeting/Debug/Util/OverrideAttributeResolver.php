@@ -30,13 +30,6 @@ class OverrideAttributeResolver
         $request->attributes->set(OverrideHandlerInterface::REQUEST_ATTRIBUTE, $overrides);
     }
 
-    /**
-     * @param Request $request
-     * @param string $key
-     * @param mixed $default
-     *
-     * @return mixed
-     */
     public static function getOverrideValue(Request $request, string $key, mixed $default = null): mixed
     {
         $overrides = $request->attributes->get(OverrideHandlerInterface::REQUEST_ATTRIBUTE, []);

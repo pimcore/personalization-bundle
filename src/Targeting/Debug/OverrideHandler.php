@@ -33,7 +33,6 @@ class OverrideHandler
     private iterable $overrideHandlers;
 
     /**
-     * @param FormFactoryInterface $formFactory
      * @param OverrideHandlerInterface[] $overrideHandlers
      */
     public function __construct(

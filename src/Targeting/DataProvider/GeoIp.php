@@ -51,9 +51,6 @@ class GeoIp implements DataProviderInterface
         $this->cache = $cache;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function load(VisitorInfo $visitorInfo): void
     {
         if ($visitorInfo->has(self::PROVIDER_KEY)) {

@@ -31,25 +31,16 @@ trait TargetDocumentTrait
      */
     private ?int $useTargetGroup = null;
 
-    /**
-     * {@inheritdoc}
-     */
     public function setUseTargetGroup(int $useTargetGroup = null): void
     {
         $this->useTargetGroup = $useTargetGroup;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getUseTargetGroup(): ?int
     {
         return $this->useTargetGroup;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTargetGroupEditablePrefix(int $targetGroupId = null): string
     {
         $prefix = '';
@@ -65,9 +56,6 @@ trait TargetDocumentTrait
         return $prefix;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTargetGroupEditableName(string $name): string
     {
         if (!$this->getUseTargetGroup()) {
@@ -82,25 +70,16 @@ trait TargetDocumentTrait
         return $name;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function hasTargetGroupSpecificEditables(): bool
     {
         return $this->getDao()->hasTargetGroupSpecificEditables();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTargetGroupSpecificEditableNames(): array
     {
         return $this->getDao()->getTargetGroupSpecificEditableNames();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function setEditable(Editable $editable): static
     {
         if ($this->getUseTargetGroup()) {
@@ -116,9 +95,7 @@ trait TargetDocumentTrait
     /**
      * Get an editable with the given key/name
      *
-     * @param string $name
      *
-     * @return Editable|null
      */
     public function getEditable(string $name): ?Editable
     {
@@ -152,9 +129,6 @@ trait TargetDocumentTrait
         return parent::getEditable($name);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function __sleep(): array
     {
         $finalVars = [];

@@ -31,9 +31,6 @@ class TargetingStorage implements DataProviderInterface
         $this->storage = $storage;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function load(VisitorInfo $visitorInfo): void
     {
         $visitorInfo->set(self::PROVIDER_KEY, $this->storage);

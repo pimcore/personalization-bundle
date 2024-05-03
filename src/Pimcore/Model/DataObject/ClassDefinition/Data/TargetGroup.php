@@ -24,11 +24,7 @@ use Pimcore\Model\DataObject\ClassDefinition\Service;
 class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
 {
     /**
-     * @param mixed $data
-     * @param DataObject\Concrete|null $object
-     * @param array $params
      *
-     * @return  null|string|int
      *
      * @see ResourcePersistenceAwareInterface::getDataFromResource
      */
@@ -46,11 +42,7 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
     }
 
     /**
-     * @param mixed $data
-     * @param DataObject\Concrete|null $object
-     * @param array $params
      *
-     * @return  null|string|int
      *
      * @see ResourcePersistenceAwareInterface::getDataForResource
      */
@@ -90,9 +82,6 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
         $this->setOptions($options);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function checkValidity(mixed $data, bool $omitMandatoryCheck = false, array $params = []): void
     {
         if (!$omitMandatoryCheck && $this->getMandatory() && empty($data)) {
@@ -128,9 +117,6 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
         return parent::jsonSerialize();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function resolveBlockedVars(): array
     {
         $blockedVars = parent::resolveBlockedVars();

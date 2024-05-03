@@ -69,17 +69,11 @@ class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements Pimc
         ];
     }
 
-    /**
-     * @return Installer
-     */
     public function getInstaller(): Installer
     {
         return $this->container->get(Installer::class);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new TargetingOverrideHandlersPass());

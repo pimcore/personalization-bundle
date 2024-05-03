@@ -29,7 +29,6 @@ class HardwarePlatform extends AbstractVariableCondition implements DataProvider
      * Mapping from admin UI values to DeviceDetector results. If value
      * is an array, in_array is used to determine match.
      *
-     * @var array
      */
     protected static array $deviceMapping = [
         'smartphone' => 'mobile',
@@ -42,33 +41,21 @@ class HardwarePlatform extends AbstractVariableCondition implements DataProvider
         $this->platform = $platform;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static($config['platform'] ?? null);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDataProviderKeys(): array
     {
         return [Device::PROVIDER_KEY];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return !empty($this->platform);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         $device = $visitorInfo->get(Device::PROVIDER_KEY);

@@ -25,41 +25,26 @@ class Country extends AbstractVariableCondition implements DataProviderDependent
 {
     private ?string $country = null;
 
-    /**
-     * @param string|null $country
-     */
     public function __construct(string $country = null)
     {
         $this->country = $country;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static($config['country'] ?? null);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDataProviderKeys(): array
     {
         return [GeoIp::PROVIDER_KEY];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return !empty($this->country);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         $city = $visitorInfo->get(GeoIp::PROVIDER_KEY);

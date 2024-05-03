@@ -47,9 +47,6 @@ abstract class AbstractCookieSaveHandler implements CookieSaveHandlerInterface
         $resolver->setAllowedTypes('httpOnly', ['bool']);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function load(Request $request, string $scope, string $name): array
     {
         $data = $request->cookies->get($name, null);
@@ -58,9 +55,6 @@ abstract class AbstractCookieSaveHandler implements CookieSaveHandlerInterface
         return $result;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function save(Response $response, string $scope, string $name, \DateTimeInterface|int|string $expire, ?array $data): void
     {
         $value = $this->prepareData($scope, $name, $expire, $data);
@@ -75,23 +69,14 @@ abstract class AbstractCookieSaveHandler implements CookieSaveHandlerInterface
     /**
      * Parse loaded data
      *
-     * @param string $scope
-     * @param string $name
-     * @param string|null $data
      *
-     * @return array
      */
     abstract protected function parseData(string $scope, string $name, ?string $data): array;
 
     /**
      * Prepare data for saving
      *
-     * @param string $scope
-     * @param string $name
-     * @param \DateTimeInterface|int|string $expire
-     * @param array|null $data
      *
-     * @return bool|string|null
      */
     abstract protected function prepareData(string $scope, string $name, \DateTimeInterface|int|string $expire, ?array $data): bool|string|null;
 }

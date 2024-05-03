@@ -25,9 +25,7 @@ interface ConditionFactoryInterface
      * Builds a condition instance from a config array as configured
      * in the admin UI and stored to DB.
      *
-     * @param array $config
      *
-     * @return ConditionInterface
      */
     public function build(array $config): ConditionInterface;
 }

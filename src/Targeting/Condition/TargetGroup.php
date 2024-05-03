@@ -28,25 +28,16 @@ class TargetGroup extends AbstractVariableCondition implements ConditionInterfac
         $this->targetGroupId = $targetGroupId;
     }
 
-    /**
-     * @return self
-     */
     public static function fromConfig(array $config): self
     {
         return new self($config['targetGroup'] ?? null);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return null !== $this->targetGroupId && $this->targetGroupId > 0;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         foreach ($visitorInfo->getAssignedTargetGroups() as $targetGroup) {

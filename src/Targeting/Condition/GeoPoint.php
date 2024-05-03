@@ -39,9 +39,6 @@ class GeoPoint extends AbstractVariableCondition implements DataProviderDependen
         $this->radius = $radius;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static(
@@ -51,25 +48,16 @@ class GeoPoint extends AbstractVariableCondition implements DataProviderDependen
         );
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDataProviderKeys(): array
     {
         return [GeoLocation::PROVIDER_KEY];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return !empty($this->latitude) && !empty($this->longitude) && !empty($this->radius);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         /** @var GeoLocationModel|null $location */

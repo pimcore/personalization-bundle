@@ -55,9 +55,6 @@ class JWTCookieSaveHandler extends AbstractCookieSaveHandler
         $this->logger = $logger ?? new NullLogger();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function parseData(string $scope, string $name, ?string $data): array
     {
         if (null === $data) {
@@ -88,9 +85,6 @@ class JWTCookieSaveHandler extends AbstractCookieSaveHandler
         return $data;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function prepareData(string $scope, string $name, \DateTimeInterface|int|string $expire, ?array $data): bool|string|null
     {
         if (empty($data)) {
@@ -105,12 +99,7 @@ class JWTCookieSaveHandler extends AbstractCookieSaveHandler
     }
 
     /**
-     * @param string $scope
-     * @param string $name
-     * @param \DateTimeInterface|int|string $expire
-     * @param array|null $data
      *
-     * @return Builder
      *
      * @throws \Exception
      */

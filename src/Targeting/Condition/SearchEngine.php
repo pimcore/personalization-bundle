@@ -28,9 +28,6 @@ class SearchEngine extends AbstractVariableCondition implements ConditionInterfa
 
     private array $validEngines = ['google', 'bing', 'yahoo'];
 
-    /**
-     * @param null|string $engine
-     */
     public function __construct(string $engine = null)
     {
         if (!empty($engine)) {
@@ -47,17 +44,11 @@ class SearchEngine extends AbstractVariableCondition implements ConditionInterfa
         $this->engine = $engine;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static($config['searchengine'] ?? null);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         $validEngines = array_merge(['all'], $this->validEngines);
@@ -65,9 +56,6 @@ class SearchEngine extends AbstractVariableCondition implements ConditionInterfa
         return !empty($this->engine) && in_array($this->engine, $validEngines, true);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         $request = $visitorInfo->getRequest();

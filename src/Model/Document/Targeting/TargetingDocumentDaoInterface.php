@@ -22,14 +22,12 @@ interface TargetingDocumentDaoInterface
     /**
      * Checks if the document has targeting specific elements
      *
-     * @return bool
      */
     public function hasTargetGroupSpecificEditables(): bool;
 
     /**
      * Returns targeting specific element names
      *
-     * @return array
      */
     public function getTargetGroupSpecificEditableNames(): array;
 }

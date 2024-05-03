@@ -24,9 +24,6 @@ abstract class AbstractVariableCondition implements ConditionInterface, Variable
      */
     private array $variables = [];
 
-    /**
-     * {@inheritdoc}
-     */
     public function getMatchedVariables(): array
     {
         return $this->variables;

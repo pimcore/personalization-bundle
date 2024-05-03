@@ -30,9 +30,7 @@ interface TargetingDocumentInterface extends ElementInterface
      * the configured one if $targetGroupId is null and there is a configured
      * target group.
      *
-     * @param int|null $targetGroupId
      *
-     * @return string
      */
     public function getTargetGroupEditablePrefix(int $targetGroupId = null): string;
 
@@ -40,37 +38,31 @@ interface TargetingDocumentInterface extends ElementInterface
      * Adds target group prefix to element name if it is not already prefixed and
      * if a target group is set.
      *
-     * @param string $name
      *
-     * @return string
      */
     public function getTargetGroupEditableName(string $name): string;
 
     /**
      * Sets the target group to use
      *
-     * @param int|null $useTargetGroup
      */
     public function setUseTargetGroup(int $useTargetGroup = null): void;
 
     /**
      * Returns the target group to use
      *
-     * @return int|null
      */
     public function getUseTargetGroup(): ?int;
 
     /**
      * Checks if the document has targeting specific elements
      *
-     * @return bool
      */
     public function hasTargetGroupSpecificEditables(): bool;
 
     /**
      * Returns targeting specific element names
      *
-     * @return array
      */
     public function getTargetGroupSpecificEditableNames(): array;
 }
