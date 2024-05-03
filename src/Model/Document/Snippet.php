@@ -26,8 +26,5 @@ class Snippet extends \Pimcore\Model\Document\Snippet implements TargetingDocume
 {
     use TargetDocumentTrait;
 
-    /**
-     * {@inheritdoc}
-     */
     protected string $type = 'snippet';
 }

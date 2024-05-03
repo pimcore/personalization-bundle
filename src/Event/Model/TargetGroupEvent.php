@@ -28,8 +28,6 @@ class TargetGroupEvent extends Event
     /**
      * TargetGroupEvent constructor.
      *
-     * @param TargetGroup $targetGroup
-     * @param array $arguments
      */
     public function __construct(TargetGroup $targetGroup, array $arguments = [])
     {

@@ -77,9 +77,7 @@ class Rule extends Model\AbstractModel
     /**
      * Static helper to retrieve an instance of Tool\Targeting\Rule by the given ID
      *
-     * @param int $id
      *
-     * @return self|null
      */
     public static function getById(int $id): ?Rule
     {
@@ -94,9 +92,7 @@ class Rule extends Model\AbstractModel
     }
 
     /**
-     * @param string $name
      *
-     * @return self|null
      *
      * @throws \Exception
      */

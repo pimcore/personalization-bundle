@@ -54,9 +54,6 @@ class ConditionMatcher implements ConditionMatcherInterface
         $this->logger = $logger;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo, array $conditions, bool $collectVariables = false): bool
     {
         // reset internal state
@@ -86,9 +83,6 @@ class ConditionMatcher implements ConditionMatcherInterface
         return (bool)$result;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCollectedVariables(): array
     {
         return $this->collectedVariables;

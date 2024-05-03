@@ -34,9 +34,7 @@ class TargetingPageController extends PageController
     /**
      * @Route("/clear-targeting-editable-data", name="pimcore_bundle_personalization_clear_targeting_page_editable_data", methods={"PUT"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function clearTargetingEditableDataAction(Request $request): JsonResponse
     {
@@ -67,11 +65,6 @@ class TargetingPageController extends PageController
 
     /**
      * @Route("/save", name="pimcore_admin_document_page_save", methods={"PUT", "POST"})
-     *
-     * @param Request $request
-     * @param StaticPageGenerator $staticPageGenerator
-     *
-     * @return JsonResponse
      *
      * @throws \Exception
      */

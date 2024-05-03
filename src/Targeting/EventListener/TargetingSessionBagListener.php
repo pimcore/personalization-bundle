@@ -41,11 +41,6 @@ class TargetingSessionBagListener implements EventSubscriberInterface
         $this->targetingEnableService = $targetingEnableService;
     }
 
-    /**
-     * {@inheritdoc}
-     *
-     * @return array
-     */
     public static function getSubscribedEvents(): array
     {
         return [
@@ -116,7 +111,6 @@ class TargetingSessionBagListener implements EventSubscriberInterface
     /**
      * Removes session cookie from cached response
      *
-     * @param PrepareResponseEvent $event
      */
     public function prepareFullPageCacheResponse(PrepareResponseEvent $event): void
     {

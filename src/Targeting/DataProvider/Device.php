@@ -38,14 +38,12 @@ class Device implements DataProviderInterface
     /**
      * The cache handler caching detected results
      *
-     * @var CoreCacheHandler|null
      */
     private ?CoreCacheHandler $cache = null;
 
     /**
      * The cache pool which is passed to the DeviceDetector
      *
-     * @var TagAwareAdapterInterface
      */
     private TagAwareAdapterInterface $cachePool;
 
@@ -64,9 +62,6 @@ class Device implements DataProviderInterface
         $this->cachePool = $cachePool;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function load(VisitorInfo $visitorInfo): void
     {
         if ($visitorInfo->has(self::PROVIDER_KEY)) {

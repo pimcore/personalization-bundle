@@ -33,9 +33,7 @@ class TargetingSnippetController extends SnippetController
     /**
      * @Route("/clear-targeting-editable-data", name="pimcore_bundle_personalization_clear_targeting_snippet_editable_data", methods={"PUT"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function clearTargetingEditableDataAction(Request $request): JsonResponse
     {
@@ -66,10 +64,6 @@ class TargetingSnippetController extends SnippetController
 
     /**
      * @Route("/save", name="pimcore_admin_document_snippet_save", methods={"PUT", "POST"})
-     *
-     * @param Request $request
-     *
-     * @return JsonResponse
      *
      * @throws \Exception
      */

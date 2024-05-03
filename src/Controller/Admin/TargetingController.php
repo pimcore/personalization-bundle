@@ -45,9 +45,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/rule/list", name="pimcore_bundle_personalization_targeting_rulelist", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function ruleListAction(Request $request): JsonResponse
     {
@@ -72,9 +70,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/rule/add", name="pimcore_bundle_personalization_targeting_ruleadd", methods={"POST"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function ruleAddAction(Request $request): JsonResponse
     {
@@ -88,9 +84,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/rule/delete", name="pimcore_bundle_personalization_targeting_ruledelete", methods={"DELETE"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function ruleDeleteAction(Request $request): JsonResponse
     {
@@ -108,9 +102,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/rule/get", name="pimcore_bundle_personalization_targeting_ruleget", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function ruleGetAction(Request $request): JsonResponse
     {
@@ -126,9 +118,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/rule/save", name="pimcore_bundle_personalization_targeting_rulesave", methods={"PUT"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function ruleSaveAction(Request $request): JsonResponse
     {
@@ -150,9 +140,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/rule/order", name="pimcore_bundle_personalization_targeting_ruleorder", methods={"POST"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function ruleOrderAction(Request $request): JsonResponse
     {
@@ -196,9 +184,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/target-group/list", name="pimcore_bundle_personalization_targeting_targetgrouplist", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function targetGroupListAction(Request $request): JsonResponse
     {
@@ -231,10 +217,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/target-group/add", name="pimcore_bundle_personalization_targeting_targetgroupadd", methods={"POST"})
      *
-     * @param Request $request
-     * @param CoreCacheHandler $cache
      *
-     * @return JsonResponse
      */
     public function targetGroupAddAction(Request $request, CoreCacheHandler $cache): JsonResponse
     {
@@ -251,10 +234,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/target-group/delete", name="pimcore_bundle_personalization_targeting_targetgroupdelete", methods={"DELETE"})
      *
-     * @param Request $request
-     * @param CoreCacheHandler $cache
      *
-     * @return JsonResponse
      */
     public function targetGroupDeleteAction(Request $request, CoreCacheHandler $cache): JsonResponse
     {
@@ -274,9 +254,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/target-group/get", name="pimcore_bundle_personalization_targeting_targetgroupget", methods={"GET"})
      *
-     * @param Request $request
      *
-     * @return JsonResponse
      */
     public function targetGroupGetAction(Request $request): JsonResponse
     {
@@ -292,10 +270,7 @@ class TargetingController extends UserAwareController implements KernelControlle
     /**
      * @Route("/target-group/save", name="pimcore_bundle_personalization_targeting_targetgroupsave", methods={"PUT"})
      *
-     * @param Request $request
-     * @param CoreCacheHandler $cache
      *
-     * @return JsonResponse
      */
     public function targetGroupSaveAction(Request $request, CoreCacheHandler $cache): JsonResponse
     {

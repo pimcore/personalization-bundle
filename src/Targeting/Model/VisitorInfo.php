@@ -71,7 +71,6 @@ class VisitorInfo implements \IteratorAggregate
     /**
      * List of frontend data providers which are expected to provide data
      *
-     * @var array
      */
     private array $frontendDataProviders = [];
 

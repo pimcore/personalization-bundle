@@ -34,14 +34,12 @@ class Page extends \Pimcore\Model\Document\Page implements TargetingDocumentInte
      *
      * @internal
      *
-     * @var string
      */
     protected string $targetGroupIds = '';
 
     /**
      * Set linked Target Groups as set in properties panel as list of IDs
      *
-     * @param array|string $targetGroupIds
      */
     public function setTargetGroupIds(array|string $targetGroupIds): void
     {
@@ -61,7 +59,6 @@ class Page extends \Pimcore\Model\Document\Page implements TargetingDocumentInte
     /**
      * Get serialized list of Target Group IDs
      *
-     * @return string
      */
     public function getTargetGroupIds(): string
     {

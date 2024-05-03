@@ -25,33 +25,21 @@ class Language extends AbstractVariableCondition implements ConditionInterface
 {
     private ?string $language = null;
 
-    /**
-     * @param null|string $language
-     */
     public function __construct(string $language = null)
     {
         $this->language = $language;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         return new static($config['language'] ?? null);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return !empty($this->language);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         $request = $visitorInfo->getRequest();

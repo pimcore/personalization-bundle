@@ -32,9 +32,7 @@ class TargetingCodeEvent extends Event
     private array $data;
 
     /**
-     * @param string $template
      * @param CodeBlock[] $blocks
-     * @param array $data
      */
     public function __construct(
         string $template,

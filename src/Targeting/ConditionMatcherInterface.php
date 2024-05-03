@@ -24,18 +24,13 @@ interface ConditionMatcherInterface
     /**
      * Matches a visitor info against a list of condition configurations (as configured via UI)
      *
-     * @param VisitorInfo $visitorInfo
-     * @param array $configs
-     * @param bool $collectVariables
      *
-     * @return bool
      */
     public function match(VisitorInfo $visitorInfo, array $configs, bool $collectVariables = false): bool;
 
     /**
      * Returns collected variables from last match
      *
-     * @return array
      */
     public function getCollectedVariables(): array;
 }

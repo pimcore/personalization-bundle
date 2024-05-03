@@ -33,9 +33,6 @@ class DataLoader implements DataLoaderInterface
         $this->dataProviders = $dataProviders;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function loadDataFromProviders(VisitorInfo $visitorInfo, array|string $providerKeys): void
     {
         if (!is_array($providerKeys)) {
@@ -71,17 +68,11 @@ class DataLoader implements DataLoaderInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function hasDataProvider(string $type): bool
     {
         return $this->dataProviders->has($type);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDataProvider(string $type): DataProviderInterface
     {
         if (!$this->dataProviders->has($type)) {

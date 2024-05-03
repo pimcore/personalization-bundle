@@ -35,9 +35,6 @@ class TimeOnSite implements ConditionInterface, DataProviderDependentInterface
         $this->seconds = $seconds;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function fromConfig(array $config): static
     {
         $seconds = $config['seconds'] ?? 0;
@@ -47,25 +44,16 @@ class TimeOnSite implements ConditionInterface, DataProviderDependentInterface
         return new static($seconds);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDataProviderKeys(): array
     {
         return [TargetingStorage::PROVIDER_KEY];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function canMatch(): bool
     {
         return $this->seconds > 0;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function match(VisitorInfo $visitorInfo): bool
     {
         /** @var TargetingStorageInterface $storage */

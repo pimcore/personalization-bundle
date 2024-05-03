@@ -32,16 +32,13 @@ interface ConditionInterface
      * data provider for the country name as it would match everything. Returning
      * false here will set the match result implicitly to false.
      *
-     * @return bool
      */
     public function canMatch(): bool;
 
     /**
      * Tests condition against visitor info
      *
-     * @param VisitorInfo $visitorInfo
      *
-     * @return bool
      */
     public function match(VisitorInfo $visitorInfo): bool;
 }

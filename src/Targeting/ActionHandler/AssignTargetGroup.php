@@ -69,7 +69,6 @@ class AssignTargetGroup implements ActionHandlerInterface
     /**
      * Loads stored assignments from storage and applies it to visitor info
      *
-     * @param VisitorInfo $visitorInfo
      */
     public function loadStoredAssignments(VisitorInfo $visitorInfo): void
     {

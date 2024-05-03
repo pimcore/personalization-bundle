@@ -65,9 +65,6 @@ class TargetGroupMultiselect extends Model\DataObject\ClassDefinition\Data\Multi
         return parent::jsonSerialize();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function resolveBlockedVars(): array
     {
         $blockedVars = parent::resolveBlockedVars();

@@ -33,11 +33,6 @@ class VisitedPagesCountListener implements EventSubscriberInterface
         $this->visitedPagesCounter = $visitedPagesCounter;
     }
 
-    /**
-     * {@inheritdoc}
-     *
-     * @return array
-     */
     public static function getSubscribedEvents(): array
     {
         return [
