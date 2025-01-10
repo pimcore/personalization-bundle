@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -10,8 +11,8 @@ declare(strict_types=1);
  * Full copyright and license information is available in
  * LICENSE.md which is distributed with this source code.
  *
- *  @copyright  Copyright (c) Pimcore GmbH (http://www.pimcore.org)
- *  @license    http://www.pimcore.org/license     GPLv3 and PCL
+ * @copyright  Copyright (c) Pimcore GmbH (http://www.pimcore.org)
+ * @license    http://www.pimcore.org/license     GPLv3 and PCL
  */
 
 namespace Pimcore\Model\DataObject\ClassDefinition\Data;
@@ -28,8 +29,11 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
      *
      * @see ResourcePersistenceAwareInterface::getDataFromResource
      */
-    public function getDataFromResource(mixed $data, Dataobject\Concrete $object = null, array $params = []): null|string|int
-    {
+    public function getDataFromResource(
+        mixed $data,
+        Dataobject\Concrete $object = null,
+        array $params = []
+    ): null|string|int {
         if (!empty($data)) {
             try {
                 $this->checkValidity($data, true, $params);
@@ -46,8 +50,12 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
      *
      * @see ResourcePersistenceAwareInterface::getDataForResource
      */
-    public function getDataForResource(mixed $data, DataObject\Concrete $object = null, array $params = []): null|string|int
-    {
+    public function getDataForResource(
+        mixed $data,
+        DataObject\Concrete $object = null,
+        array $params = []
+    ): null|string|int {
+        $this->init();
         if (!empty($data)) {
             try {
                 $this->checkValidity($data, true, $params);
@@ -75,7 +83,7 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
         foreach ($targetGroups as $targetGroup) {
             $options[] = [
                 'value' => $targetGroup->getId(),
-                'key' => $targetGroup->getName(),
+                'key'   => $targetGroup->getName(),
             ];
         }
 
@@ -100,8 +108,7 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
     public static function __set_state(array $data): static
     {
         $obj = parent::__set_state($data);
-        $options = $obj->getOptions();
-        if (\Pimcore::inAdmin() || empty($options)) {
+        if (\Pimcore::inAdmin()) {
             $obj->configureOptions();
         }
 
@@ -128,5 +135,25 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
     public function getFieldType(): string
     {
         return 'targetGroup';
+    }
+
+    public function __wakeup(): void
+    {
+        $this->init();
+    }
+
+    /**
+     * @return $this
+     * @internal
+     *
+     */
+    private function init(): static
+    {
+        $options = $this->getOptions();
+        if (empty($options)) {
+            $this->configureOptions();
+        }
+
+        return $this;
     }
 }
