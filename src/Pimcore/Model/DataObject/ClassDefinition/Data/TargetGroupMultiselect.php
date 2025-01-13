@@ -48,8 +48,7 @@ class TargetGroupMultiselect extends Model\DataObject\ClassDefinition\Data\Multi
     public static function __set_state(array $data): static
     {
         $obj = parent::__set_state($data);
-        $options = $obj->getOptions();
-        if (\Pimcore::inAdmin() || empty($options)) {
+        if (\Pimcore::inAdmin()) {
             $obj->configureOptions();
         }
 
