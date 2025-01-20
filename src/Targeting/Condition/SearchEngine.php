@@ -28,7 +28,7 @@ class SearchEngine extends AbstractVariableCondition implements ConditionInterfa
 
     private array $validEngines = ['google', 'bing', 'yahoo'];
 
-    public function __construct(string $engine = null)
+    public function __construct(?string $engine = null)
     {
         if (!empty($engine)) {
             $validEngines = array_merge(['all'], $this->validEngines);

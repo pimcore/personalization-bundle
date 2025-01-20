@@ -31,7 +31,7 @@ class CodeSnippet implements ActionHandlerInterface, ResponseTransformingActionH
         $this->codeInjector = $codeInjector;
     }
 
-    public function apply(VisitorInfo $visitorInfo, array $action, Rule $rule = null): void
+    public function apply(VisitorInfo $visitorInfo, array $action, ?Rule $rule = null): void
     {
         $code = $action['code'] ?? '';
         $selector = $action['selector'] ?? '';

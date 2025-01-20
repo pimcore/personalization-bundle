@@ -31,7 +31,7 @@ class AssignTargetGroup implements ActionHandlerInterface
     ) {
     }
 
-    public function apply(VisitorInfo $visitorInfo, array $action, Rule $rule = null): void
+    public function apply(VisitorInfo $visitorInfo, array $action, ?Rule $rule = null): void
     {
         $targetGroupId = $action['targetGroup'] ?? null;
         if (!$targetGroupId) {

@@ -41,8 +41,8 @@ class JWTCookieSaveHandler extends AbstractCookieSaveHandler
     public function __construct(
         string $secret,
         array $options = [],
-        Signer $signer = null,
-        LoggerInterface $logger = null
+        ?Signer $signer = null,
+        ?LoggerInterface $logger = null
     ) {
         parent::__construct($options);
 

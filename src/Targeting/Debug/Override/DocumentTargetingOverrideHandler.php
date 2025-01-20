@@ -42,10 +42,10 @@ class DocumentTargetingOverrideHandler implements OverrideHandlerInterface
             'choice_loader' => new CallbackChoiceLoader(function () {
                 return (new TargetGroup\Listing())->load();
             }),
-            'choice_value' => function (TargetGroup $targetGroup = null) {
+            'choice_value' => function (?TargetGroup $targetGroup = null) {
                 return $targetGroup ? $targetGroup->getId() : '';
             },
-            'choice_label' => function (TargetGroup $targetGroup = null, $key, $index) {
+            'choice_label' => function (?TargetGroup $targetGroup = null) {
                 return $targetGroup ? $targetGroup->getName() : '';
             },
         ]);

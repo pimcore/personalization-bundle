@@ -55,7 +55,7 @@ class ExpressionBuilder
         }
     }
 
-    private function normalizeOperator(string $operator = null): string
+    private function normalizeOperator(?string $operator = null): string
     {
         if (empty($operator)) {
             $operator = 'and';

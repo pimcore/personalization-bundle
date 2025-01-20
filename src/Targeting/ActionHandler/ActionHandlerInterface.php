@@ -25,5 +25,5 @@ interface ActionHandlerInterface
     /**
      * Applies the action
      */
-    public function apply(VisitorInfo $visitorInfo, array $action, Rule $rule = null): void;
+    public function apply(VisitorInfo $visitorInfo, array $action, ?Rule $rule = null): void;
 }

@@ -32,7 +32,7 @@ class GeoPoint extends AbstractVariableCondition implements DataProviderDependen
 
     private ?int $radius = null;
 
-    public function __construct(float $latitude = null, float $longitude = null, int $radius = null)
+    public function __construct(?float $latitude = null, ?float $longitude = null, ?int $radius = null)
     {
         $this->latitude = $latitude;
         $this->longitude = $longitude;

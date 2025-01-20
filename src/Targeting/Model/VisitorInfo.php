@@ -76,7 +76,7 @@ class VisitorInfo implements \IteratorAggregate
 
     private ?Response $response = null;
 
-    public function __construct(Request $request, string $visitorId = null, string $sessionId = null)
+    public function __construct(Request $request, ?string $visitorId = null, ?string $sessionId = null)
     {
         $this->request = $request;
         $this->visitorId = $visitorId;

@@ -23,7 +23,7 @@ class ReferringSite extends AbstractVariableCondition implements ConditionInterf
 {
     private ?string $pattern = null;
 
-    public function __construct(string $pattern = null)
+    public function __construct(?string $pattern = null)
     {
         $this->pattern = $pattern;
     }

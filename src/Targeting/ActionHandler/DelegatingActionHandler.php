@@ -37,7 +37,7 @@ class DelegatingActionHandler implements ActionHandlerInterface
         $this->dataLoader = $dataLoader;
     }
 
-    public function apply(VisitorInfo $visitorInfo, array $action, Rule $rule = null): void
+    public function apply(VisitorInfo $visitorInfo, array $action, ?Rule $rule = null): void
     {
         /** @var string $type */
         $type = $action['type'] ?? null;

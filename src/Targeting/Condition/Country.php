@@ -25,7 +25,7 @@ class Country extends AbstractVariableCondition implements DataProviderDependent
 {
     private ?string $country = null;
 
-    public function __construct(string $country = null)
+    public function __construct(?string $country = null)
     {
         $this->country = $country;
     }

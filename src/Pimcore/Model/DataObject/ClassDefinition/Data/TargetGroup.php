@@ -28,7 +28,7 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
      *
      * @see ResourcePersistenceAwareInterface::getDataFromResource
      */
-    public function getDataFromResource(mixed $data, Dataobject\Concrete $object = null, array $params = []): null|string|int
+    public function getDataFromResource(mixed $data, ?Dataobject\Concrete $object = null, array $params = []): null|string|int
     {
         if (!empty($data)) {
             try {
@@ -46,7 +46,7 @@ class TargetGroup extends Model\DataObject\ClassDefinition\Data\Select
      *
      * @see ResourcePersistenceAwareInterface::getDataForResource
      */
-    public function getDataForResource(mixed $data, DataObject\Concrete $object = null, array $params = []): null|string|int
+    public function getDataForResource(mixed $data, ?DataObject\Concrete $object = null, array $params = []): null|string|int
     {
         if (!empty($data)) {
             try {

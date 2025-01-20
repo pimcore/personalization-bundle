@@ -81,7 +81,7 @@ class GeoIp implements DataProviderInterface
         return $result;
     }
 
-    private function handleOverrides(Request $request, array $result = null): ?array
+    private function handleOverrides(Request $request, ?array $result = null): ?array
     {
         $overrides = OverrideAttributeResolver::getOverrideValue($request, 'location');
         if (empty($overrides)) {

@@ -89,7 +89,7 @@ class SessionStorage implements TargetingStorageInterface
     /**
      * {@inheritdoc }
      */
-    public function clear(VisitorInfo $visitorInfo, string $scope = null): void
+    public function clear(VisitorInfo $visitorInfo, ?string $scope = null): void
     {
         if (null !== $scope) {
             $bag = $this->getSessionBag($visitorInfo, $scope, true);
@@ -195,8 +195,8 @@ class SessionStorage implements TargetingStorageInterface
 
     private function updateTimestamps(
         AttributeBag $bag,
-        \DateTimeInterface $createdAt = null,
-        \DateTimeInterface $updatedAt = null
+        ?\DateTimeInterface $createdAt = null,
+        ?\DateTimeInterface $updatedAt = null
     ): void {
         $timestamps = $this->normalizeTimestamps($createdAt, $updatedAt);
 
