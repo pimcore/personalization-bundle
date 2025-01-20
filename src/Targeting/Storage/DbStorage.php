@@ -198,7 +198,7 @@ EOF;
     /**
      * {@inheritdoc }
      */
-    public function clear(VisitorInfo $visitorInfo, string $scope = null): void
+    public function clear(VisitorInfo $visitorInfo, ?string $scope = null): void
     {
         if (!$visitorInfo->hasVisitorId()) {
             return;
@@ -322,10 +322,10 @@ EOF;
     }
 
     private function updateTimestamps(
-        VisitorInfo $visitorInfo,
-        string $scope,
-        \DateTimeInterface $createdAt = null,
-        \DateTimeInterface $updatedAt = null
+        VisitorInfo         $visitorInfo,
+        string              $scope,
+        ?\DateTimeInterface $createdAt = null,
+        ?\DateTimeInterface $updatedAt = null
     ): void {
         $timestamps = $this->normalizeTimestamps($createdAt, $updatedAt);
 

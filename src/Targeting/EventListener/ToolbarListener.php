@@ -159,7 +159,7 @@ class ToolbarListener implements EventSubscriberInterface
         return true;
     }
 
-    private function collectTemplateData(VisitorInfo $visitorInfo, Document $document = null): array
+    private function collectTemplateData(VisitorInfo $visitorInfo, ?Document $document = null): array
     {
         $token = substr(hash('sha256', uniqid((string)mt_rand(), true)), 0, 6);
 

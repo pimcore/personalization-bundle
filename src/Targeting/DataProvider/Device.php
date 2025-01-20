@@ -79,7 +79,7 @@ class Device implements DataProviderInterface
         );
     }
 
-    private function handleOverrides(Request $request, array $result = null): ?array
+    private function handleOverrides(Request $request, ?array $result = null): ?array
     {
         $overrides = OverrideAttributeResolver::getOverrideValue($request, 'device');
         if (empty($overrides)) {

@@ -32,7 +32,7 @@ interface TargetingDocumentInterface extends ElementInterface
      *
      *
      */
-    public function getTargetGroupEditablePrefix(int $targetGroupId = null): string;
+    public function getTargetGroupEditablePrefix(?int $targetGroupId = null): string;
 
     /**
      * Adds target group prefix to element name if it is not already prefixed and
@@ -46,7 +46,7 @@ interface TargetingDocumentInterface extends ElementInterface
      * Sets the target group to use
      *
      */
-    public function setUseTargetGroup(int $useTargetGroup = null): void;
+    public function setUseTargetGroup(?int $useTargetGroup = null): void;
 
     /**
      * Returns the target group to use

@@ -120,7 +120,7 @@ class FallbackStorage implements TargetingStorageInterface
     /**
      * {@inheritdoc }
      */
-    public function clear(VisitorInfo $visitorInfo, string $scope = null): void
+    public function clear(VisitorInfo $visitorInfo, ?string $scope = null): void
     {
         $this->fallbackStorage->clear($visitorInfo, $scope);
 

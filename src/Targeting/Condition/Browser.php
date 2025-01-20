@@ -25,7 +25,7 @@ class Browser extends AbstractVariableCondition implements DataProviderDependent
 {
     private ?string $browser = null;
 
-    public function __construct(string $browser = null)
+    public function __construct(?string $browser = null)
     {
         $this->browser = $browser;
     }

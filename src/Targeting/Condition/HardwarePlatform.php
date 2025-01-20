@@ -36,7 +36,7 @@ class HardwarePlatform extends AbstractVariableCondition implements DataProvider
         'feature phone' => 'mobile',
     ];
 
-    public function __construct(string $platform = null)
+    public function __construct(?string $platform = null)
     {
         $this->platform = $platform;
     }
@@ -83,7 +83,7 @@ class HardwarePlatform extends AbstractVariableCondition implements DataProvider
         return false;
     }
 
-    private function matchesPlatform(string $platform = null): bool
+    private function matchesPlatform(?string $platform = null): bool
     {
         if (empty($platform)) {
             return false;

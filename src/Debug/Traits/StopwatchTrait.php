@@ -35,7 +35,7 @@ trait StopwatchTrait
 {
     private ?Stopwatch $stopwatch = null;
 
-    public function setStopwatch(Stopwatch $stopwatch = null): void
+    public function setStopwatch(?Stopwatch $stopwatch = null): void
     {
         $this->stopwatch = $stopwatch;
     }

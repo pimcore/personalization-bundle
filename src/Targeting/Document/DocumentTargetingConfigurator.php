@@ -217,7 +217,7 @@ class DocumentTargetingConfigurator
         return $targetGroups;
     }
 
-    public function setOverrideTargetGroup(TargetGroup $overrideTargetGroup = null): void
+    public function setOverrideTargetGroup(?TargetGroup $overrideTargetGroup = null): void
     {
         $this->overrideTargetGroup = $overrideTargetGroup;
     }

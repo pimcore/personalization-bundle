@@ -25,7 +25,7 @@ class Language extends AbstractVariableCondition implements ConditionInterface
 {
     private ?string $language = null;
 
-    public function __construct(string $language = null)
+    public function __construct(?string $language = null)
     {
         $this->language = $language;
     }

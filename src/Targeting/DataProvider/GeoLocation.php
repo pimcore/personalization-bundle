@@ -56,7 +56,7 @@ class GeoLocation implements DataProviderInterface
         );
     }
 
-    private function handleOverrides(Request $request, GeoLocationModel $location = null): ?GeoLocationModel
+    private function handleOverrides(Request $request, ?GeoLocationModel $location = null): ?GeoLocationModel
     {
         $overrides = OverrideAttributeResolver::getOverrideValue($request, 'location');
         if (empty($overrides)) {

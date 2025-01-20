@@ -123,7 +123,7 @@ class RedisStorage implements TargetingStorageInterface
     /**
      * {@inheritdoc }
      */
-    public function clear(VisitorInfo $visitorInfo, string $scope = null): void
+    public function clear(VisitorInfo $visitorInfo, ?string $scope = null): void
     {
         $scopes = [];
         if (null !== $scope) {
@@ -221,11 +221,11 @@ class RedisStorage implements TargetingStorageInterface
     }
 
     private function updateTimestamps(
-        \Credis_Client $multi,
-        string $key,
-        int $currentCreatedAt,
-        \DateTimeInterface $createdAt = null,
-        \DateTimeInterface $updatedAt = null
+        \Credis_Client      $multi,
+        string              $key,
+        int                 $currentCreatedAt,
+        ?\DateTimeInterface $createdAt = null,
+        ?\DateTimeInterface $updatedAt = null
     ): void {
         $timestamps = $this->normalizeTimestamps($createdAt, $updatedAt);
 

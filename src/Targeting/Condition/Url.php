@@ -23,7 +23,7 @@ class Url extends AbstractVariableCondition implements ConditionInterface
 {
     private ?string $pattern = null;
 
-    public function __construct(string $pattern = null)
+    public function __construct(?string $pattern = null)
     {
         $this->pattern = $pattern;
     }

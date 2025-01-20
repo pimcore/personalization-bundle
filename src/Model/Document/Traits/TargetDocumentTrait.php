@@ -31,7 +31,7 @@ trait TargetDocumentTrait
      */
     private ?int $useTargetGroup = null;
 
-    public function setUseTargetGroup(int $useTargetGroup = null): void
+    public function setUseTargetGroup(?int $useTargetGroup = null): void
     {
         $this->useTargetGroup = $useTargetGroup;
     }
@@ -41,7 +41,7 @@ trait TargetDocumentTrait
         return $this->useTargetGroup;
     }
 
-    public function getTargetGroupEditablePrefix(int $targetGroupId = null): string
+    public function getTargetGroupEditablePrefix(?int $targetGroupId = null): string
     {
         $prefix = '';
 

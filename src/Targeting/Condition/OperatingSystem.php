@@ -37,7 +37,7 @@ class OperatingSystem extends AbstractVariableCondition implements DataProviderD
         'IOS' => 'ios',
     ];
 
-    public function __construct(string $system = null)
+    public function __construct(?string $system = null)
     {
         $this->system = $system;
     }
@@ -84,7 +84,7 @@ class OperatingSystem extends AbstractVariableCondition implements DataProviderD
         return false;
     }
 
-    private function matchesOperatingSystem(string $os = null): bool
+    private function matchesOperatingSystem(?string $os = null): bool
     {
         if (empty($os)) {
             return false;

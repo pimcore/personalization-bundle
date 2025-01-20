@@ -112,7 +112,7 @@ class CookieStorage implements TargetingStorageInterface
     /**
      * {@inheritdoc }
      */
-    public function clear(VisitorInfo $visitorInfo, string $scope = null): void
+    public function clear(VisitorInfo $visitorInfo, ?string $scope = null): void
     {
         if (null === $scope) {
             $this->data = [];
@@ -215,9 +215,9 @@ class CookieStorage implements TargetingStorageInterface
     }
 
     private function updateTimestamps(
-        string $scope,
-        \DateTimeInterface $createdAt = null,
-        \DateTimeInterface $updatedAt = null
+        string              $scope,
+        ?\DateTimeInterface $createdAt = null,
+        ?\DateTimeInterface $updatedAt = null
     ): void {
         $timestamps = $this->normalizeTimestamps($createdAt, $updatedAt);
 

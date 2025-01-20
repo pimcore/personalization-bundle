@@ -22,7 +22,7 @@ trait TimestampsTrait
     /**
      * @return \DateTimeInterface[]
      */
-    private function normalizeTimestamps(\DateTimeInterface $createdAt = null, \DateTimeInterface $updatedAt = null): array
+    private function normalizeTimestamps(?\DateTimeInterface $createdAt = null, ?\DateTimeInterface $updatedAt = null): array
     {
         $now = new \DateTimeImmutable();
 
