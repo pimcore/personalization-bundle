@@ -194,7 +194,7 @@ class SessionStorage implements TargetingStorageInterface
     }
 
     private function updateTimestamps(
-        AttributeBag        $bag,
+        AttributeBag $bag,
         ?\DateTimeInterface $createdAt = null,
         ?\DateTimeInterface $updatedAt = null
     ): void {

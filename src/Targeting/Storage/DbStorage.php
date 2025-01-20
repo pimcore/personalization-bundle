@@ -322,8 +322,8 @@ EOF;
     }
 
     private function updateTimestamps(
-        VisitorInfo         $visitorInfo,
-        string              $scope,
+        VisitorInfo $visitorInfo,
+        string $scope,
         ?\DateTimeInterface $createdAt = null,
         ?\DateTimeInterface $updatedAt = null
     ): void {

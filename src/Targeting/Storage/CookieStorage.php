@@ -215,7 +215,7 @@ class CookieStorage implements TargetingStorageInterface
     }
 
     private function updateTimestamps(
-        string              $scope,
+        string $scope,
         ?\DateTimeInterface $createdAt = null,
         ?\DateTimeInterface $updatedAt = null
     ): void {

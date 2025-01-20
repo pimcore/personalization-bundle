@@ -221,9 +221,9 @@ class RedisStorage implements TargetingStorageInterface
     }
 
     private function updateTimestamps(
-        \Credis_Client      $multi,
-        string              $key,
-        int                 $currentCreatedAt,
+        \Credis_Client $multi,
+        string $key,
+        int $currentCreatedAt,
         ?\DateTimeInterface $createdAt = null,
         ?\DateTimeInterface $updatedAt = null
     ): void {
