@@ -6,6 +6,8 @@ parameters:
                 identifier: missingType.iterableValue
             -
                 identifier: missingType.generics
+            -
+                identifier: new.static
     paths:
         - src
     bootstrapFiles:
