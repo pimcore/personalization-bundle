@@ -37,7 +37,7 @@ After reading everything about the base concepts, you are
 * [Examples for Personalization and Targeting](./doc/01_Usage/05_Examples/README.md)
 
 #### Development Documentation
-* [Installation](./doc/Installation.md)
+* [Installation](./doc/00_Installation/README.md)
 * [Setup and Basic Concepts](./doc/02_Development_Documentation/README.md)
 * [Visitor Info](./doc/02_Development_Documentation/01_Visitor_Info.md)
 * [Conditions](./doc/02_Development_Documentation/03_Conditions.md)
