@@ -26,11 +26,11 @@ use Pimcore\Bundle\PersonalizationBundle\Targeting\Model\VisitorInfo;
 
 class GeoPoint extends AbstractVariableCondition implements DataProviderDependentInterface
 {
-    private ?float $latitude = null;
+    private ?float $latitude;
 
-    private ?float $longitude = null;
+    private ?float $longitude;
 
-    private ?int $radius = null;
+    private ?int $radius;
 
     public function __construct(?float $latitude = null, ?float $longitude = null, ?int $radius = null)
     {
@@ -68,8 +68,10 @@ class GeoPoint extends AbstractVariableCondition implements DataProviderDependen
         }
 
         $distance = $this->calculateDistance(
-            $this->latitude, $this->longitude,
-            $location->getLatitude(), $location->getLongitude()
+            $this->latitude,
+            $this->longitude,
+            $location->getLatitude(),
+            $location->getLongitude()
         );
 
         if ($distance < ($this->radius * 1000)) {
@@ -89,9 +91,6 @@ class GeoPoint extends AbstractVariableCondition implements DataProviderDependen
         $coordA = new Coordinate($latA, $longA);
         $coordB = new Coordinate($latB, $longB);
 
-        $calculator = new Haversine();
-        $distance = $calculator->getDistance($coordA, $coordB);
-
-        return $distance;
+        return (new Haversine())->getDistance($coordA, $coordB);
     }
 }
