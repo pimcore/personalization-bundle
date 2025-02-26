@@ -34,10 +34,9 @@ class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements Pimc
     use BundleAdminClassicTrait;
     use PackageVersionTrait;
 
-
     protected function getComposerPackageName(): string
     {
-       return 'pimcore/personalization-bundle';
+        return 'pimcore/personalization-bundle';
     }
 
     public function getContainerExtension(): ExtensionInterface
