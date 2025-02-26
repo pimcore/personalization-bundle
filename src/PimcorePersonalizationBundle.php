@@ -19,6 +19,7 @@ namespace Pimcore\Bundle\PersonalizationBundle;
 use Pimcore\Bundle\AdminBundle\PimcoreAdminBundle;
 use Pimcore\Bundle\PersonalizationBundle\DependencyInjection\Compiler\DebugStopwatchPass;
 use Pimcore\Bundle\PersonalizationBundle\DependencyInjection\Compiler\TargetingOverrideHandlersPass;
+use Pimcore\Bundle\PersonalizationBundle\DependencyInjection\PimcorePersonalizationExtension;
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use Pimcore\Extension\Bundle\PimcoreBundleAdminClassicInterface;
 use Pimcore\Extension\Bundle\Traits\BundleAdminClassicTrait;
@@ -26,18 +27,23 @@ use Pimcore\Extension\Bundle\Traits\PackageVersionTrait;
 use Pimcore\HttpKernel\Bundle\DependentBundleInterface;
 use Pimcore\HttpKernel\BundleCollection\BundleCollection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 
 class PimcorePersonalizationBundle extends AbstractPimcoreBundle implements PimcoreBundleAdminClassicInterface, DependentBundleInterface
 {
     use BundleAdminClassicTrait;
     use PackageVersionTrait;
 
-    // @TODO Enable when bundle is moved to own repo
 
-    /*public function getComposerPackageName(): string
+    protected function getComposerPackageName(): string
     {
        return 'pimcore/personalization-bundle';
-    }*/
+    }
+
+    public function getContainerExtension(): ExtensionInterface
+    {
+        return new PimcorePersonalizationExtension();
+    }
 
     public function getCssPaths(): array
     {
