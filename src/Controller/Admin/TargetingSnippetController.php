@@ -21,20 +21,15 @@ use Pimcore\Bundle\PersonalizationBundle\Model\Document\Targeting\TargetingDocum
 use Pimcore\Model\Document;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
- * @Route("/targeting/snippet")
- *
  * @internal
  */
+#[Route('/targeting/snippet')]
 class TargetingSnippetController extends SnippetController
 {
-    /**
-     * @Route("/clear-targeting-editable-data", name="pimcore_bundle_personalization_clear_targeting_snippet_editable_data", methods={"PUT"})
-     *
-     *
-     */
+    #[Route('/clear-targeting-editable-data', name: 'pimcore_bundle_personalization_clear_targeting_snippet_editable_data', methods: ['PUT'])]
     public function clearTargetingEditableDataAction(Request $request): JsonResponse
     {
         $targetGroupId = $request->request->getInt('targetGroup');
@@ -63,10 +58,9 @@ class TargetingSnippetController extends SnippetController
     }
 
     /**
-     * @Route("/save", name="pimcore_admin_document_snippet_save", methods={"PUT", "POST"})
-     *
      * @throws \Exception
      */
+    #[Route('/save', name: 'pimcore_admin_document_snippet_save', methods: ['PUT', 'POST'])]
     public function saveAction(Request $request): JsonResponse
     {
         return parent::saveAction($request);
