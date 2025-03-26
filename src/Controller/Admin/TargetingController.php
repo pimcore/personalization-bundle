@@ -198,7 +198,11 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse(['success' => true, 'id' => $targetGroup->getId()]);
     }
 
-    #[Route('/target-group/delete', name: 'pimcore_bundle_personalization_targeting_targetgroupdelete', methods: ['DELETE'])]
+    #[Route(
+        '/target-group/delete',
+        name: 'pimcore_bundle_personalization_targeting_targetgroupdelete',
+        methods: ['DELETE']
+    )]
     public function targetGroupDeleteAction(Request $request, CoreCacheHandler $cache): JsonResponse
     {
         $success = false;

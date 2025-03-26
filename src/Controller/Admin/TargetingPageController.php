@@ -30,7 +30,11 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/targeting/page')]
 class TargetingPageController extends PageController
 {
-    #[Route('/clear-targeting-editable-data', name: 'pimcore_bundle_personalization_clear_targeting_page_editable_data', methods: ['PUT'])]
+    #[Route(
+        '/clear-targeting-editable-data',
+        name: 'pimcore_bundle_personalization_clear_targeting_page_editable_data',
+        methods: ['PUT']
+    )]
     public function clearTargetingEditableDataAction(Request $request): JsonResponse
     {
         $targetGroupId = $request->request->getInt('targetGroup');
