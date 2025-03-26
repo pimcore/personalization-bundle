@@ -22,20 +22,19 @@ use Pimcore\Document\StaticPageGenerator;
 use Pimcore\Model\Document;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
- * @Route("/targeting/page")
- *
  * @internal
  */
+#[Route('/targeting/page')]
 class TargetingPageController extends PageController
 {
-    /**
-     * @Route("/clear-targeting-editable-data", name="pimcore_bundle_personalization_clear_targeting_page_editable_data", methods={"PUT"})
-     *
-     *
-     */
+    #[Route(
+        '/clear-targeting-editable-data',
+        name: 'pimcore_bundle_personalization_clear_targeting_page_editable_data',
+        methods: ['PUT']
+    )]
     public function clearTargetingEditableDataAction(Request $request): JsonResponse
     {
         $targetGroupId = $request->request->getInt('targetGroup');
@@ -64,10 +63,9 @@ class TargetingPageController extends PageController
     }
 
     /**
-     * @Route("/save", name="pimcore_admin_document_page_save", methods={"PUT", "POST"})
-     *
      * @throws \Exception
      */
+    #[Route('/save', name: 'pimcore_admin_document_page_save', methods: ['PUT', 'POST'])]
     public function saveAction(Request $request, StaticPageGenerator $staticPageGenerator): JsonResponse
     {
         return parent::saveAction($request, $staticPageGenerator);

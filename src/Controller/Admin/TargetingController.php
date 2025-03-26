@@ -25,13 +25,12 @@ use Pimcore\Controller\UserAwareController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
- * @Route("/targeting")
- *
  * @internal
  */
+#[Route('/targeting')]
 class TargetingController extends UserAwareController implements KernelControllerEventInterface
 {
     // RULES
@@ -42,11 +41,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return preg_replace('/[#?*:\\\\<>|"%&@=;+]/', '-', $name);
     }
 
-    /**
-     * @Route("/rule/list", name="pimcore_bundle_personalization_targeting_rulelist", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/rule/list', name: 'pimcore_bundle_personalization_targeting_rulelist', methods: ['GET'])]
     public function ruleListAction(Request $request): JsonResponse
     {
         $targets = [];
@@ -67,11 +62,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse($targets);
     }
 
-    /**
-     * @Route("/rule/add", name="pimcore_bundle_personalization_targeting_ruleadd", methods={"POST"})
-     *
-     *
-     */
+    #[Route('/rule/add', name: 'pimcore_bundle_personalization_targeting_ruleadd', methods: ['POST'])]
     public function ruleAddAction(Request $request): JsonResponse
     {
         $target = new Targeting\Rule();
@@ -81,11 +72,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse(['success' => true, 'id' => $target->getId()]);
     }
 
-    /**
-     * @Route("/rule/delete", name="pimcore_bundle_personalization_targeting_ruledelete", methods={"DELETE"})
-     *
-     *
-     */
+    #[Route('/rule/delete', name: 'pimcore_bundle_personalization_targeting_ruledelete', methods: ['DELETE'])]
     public function ruleDeleteAction(Request $request): JsonResponse
     {
         $success = false;
@@ -99,11 +86,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse(['success' => $success]);
     }
 
-    /**
-     * @Route("/rule/get", name="pimcore_bundle_personalization_targeting_ruleget", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/rule/get', name: 'pimcore_bundle_personalization_targeting_ruleget', methods: ['GET'])]
     public function ruleGetAction(Request $request): JsonResponse
     {
         $target = Targeting\Rule::getById((int) $request->get('id'));
@@ -115,11 +98,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse($target);
     }
 
-    /**
-     * @Route("/rule/save", name="pimcore_bundle_personalization_targeting_rulesave", methods={"PUT"})
-     *
-     *
-     */
+    #[Route('/rule/save', name: 'pimcore_bundle_personalization_targeting_rulesave', methods: ['PUT'])]
     public function ruleSaveAction(Request $request): JsonResponse
     {
         $data = $this->decodeJson($request->get('data'));
@@ -137,11 +116,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse(['success' => true]);
     }
 
-    /**
-     * @Route("/rule/order", name="pimcore_bundle_personalization_targeting_ruleorder", methods={"POST"})
-     *
-     *
-     */
+    #[Route('/rule/order', name: 'pimcore_bundle_personalization_targeting_ruleorder', methods: ['POST'])]
     public function ruleOrderAction(Request $request): JsonResponse
     {
         $return = [
@@ -181,11 +156,7 @@ class TargetingController extends UserAwareController implements KernelControlle
 
     // TARGET GROUPS
 
-    /**
-     * @Route("/target-group/list", name="pimcore_bundle_personalization_targeting_targetgrouplist", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/target-group/list', name: 'pimcore_bundle_personalization_targeting_targetgrouplist', methods: ['GET'])]
     public function targetGroupListAction(Request $request): JsonResponse
     {
         $targetGroups = [];
@@ -214,11 +185,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse($targetGroups);
     }
 
-    /**
-     * @Route("/target-group/add", name="pimcore_bundle_personalization_targeting_targetgroupadd", methods={"POST"})
-     *
-     *
-     */
+    #[Route('/target-group/add', name: 'pimcore_bundle_personalization_targeting_targetgroupadd', methods: ['POST'])]
     public function targetGroupAddAction(Request $request, CoreCacheHandler $cache): JsonResponse
     {
         /** @var TargetGroup|TargetGroup\Dao $targetGroup */
@@ -231,11 +198,11 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse(['success' => true, 'id' => $targetGroup->getId()]);
     }
 
-    /**
-     * @Route("/target-group/delete", name="pimcore_bundle_personalization_targeting_targetgroupdelete", methods={"DELETE"})
-     *
-     *
-     */
+    #[Route(
+        '/target-group/delete',
+        name: 'pimcore_bundle_personalization_targeting_targetgroupdelete',
+        methods: ['DELETE']
+    )]
     public function targetGroupDeleteAction(Request $request, CoreCacheHandler $cache): JsonResponse
     {
         $success = false;
@@ -251,11 +218,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse(['success' => $success]);
     }
 
-    /**
-     * @Route("/target-group/get", name="pimcore_bundle_personalization_targeting_targetgroupget", methods={"GET"})
-     *
-     *
-     */
+    #[Route('/target-group/get', name: 'pimcore_bundle_personalization_targeting_targetgroupget', methods: ['GET'])]
     public function targetGroupGetAction(Request $request): JsonResponse
     {
         $targetGroup = TargetGroup::getById((int) $request->get('id'));
@@ -267,11 +230,7 @@ class TargetingController extends UserAwareController implements KernelControlle
         return $this->jsonResponse($targetGroup);
     }
 
-    /**
-     * @Route("/target-group/save", name="pimcore_bundle_personalization_targeting_targetgroupsave", methods={"PUT"})
-     *
-     *
-     */
+    #[Route('/target-group/save', name: 'pimcore_bundle_personalization_targeting_targetgroupsave', methods: ['PUT'])]
     public function targetGroupSaveAction(Request $request, CoreCacheHandler $cache): JsonResponse
     {
         $data = $this->decodeJson($request->get('data'));

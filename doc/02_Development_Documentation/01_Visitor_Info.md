@@ -100,13 +100,11 @@ namespace App\Controller;
 
 use Pimcore\Bundle\PersonalizationBundle\Targeting\VisitorInfoStorageInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 class VisitorInfoController
 {
-    /**
-     * @Route("/visitor-info")
-     */
+    #[Route('/visitor-info')]
     public function visitorInfoAction(VisitorInfoStorageInterface $visitorInfoStorage): JsonResponse
     {
         $data = [
