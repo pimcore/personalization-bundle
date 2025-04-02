@@ -16,7 +16,6 @@
 namespace Pimcore\Bundle\PersonalizationBundle\Tests\Support\Helper;
 
 use Pimcore\Bundle\PersonalizationBundle\Installer;
-use Pimcore\Db;
 use Pimcore\Tests\Support\Helper\Pimcore;
 
 class Unit extends \Codeception\Module
