@@ -36,6 +36,6 @@ pimcore_personalization:
 
 Before uninstalling the bundle, the `Target Group` references must be removed from DataObject classes, Custom services and Ecommerce Pricing Rules manually.
 
-## Upadte
+## Update
 
 [Update 1.x to 2.x](01_Updating_from_Version_1.x_to_2.x.md)
