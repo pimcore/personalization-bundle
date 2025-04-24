@@ -21,7 +21,7 @@ targeting rules it's necessary to configure the underlying data provider first.
 
 ### Configuring the MaxMind GeoIP Data Provider
 
-Follow the [official instructions](https://dev.maxmind.com/geoip/geoipupdate/) for obtaining and updating the GeoIP database.
+Follow the [official instructions](https://dev.maxmind.com/geoip/updating-databases/) for obtaining and updating the GeoIP database.
 Store the database file at the location of your choice, the default location used by _geoipupdate_ is `/usr/share/GeoIP/GeoLite2-City.mmdb`
 
 Set the path to the database file in your `parameters.yaml` to enable the geo support in Pimcore: 
