@@ -1,6 +1,6 @@
 {
     "name": "pimcore/personalization-bundle",
-    "license": "GPL-3.0+",
+    "license": "proprietary",
     "type": "pimcore-bundle",
     "description": "Pimcore Personalization Bundle",
     "config": {
