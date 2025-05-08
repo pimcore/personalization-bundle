@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /**
@@ -35,7 +36,7 @@ class TargetGroupMultiselect extends Model\DataObject\ClassDefinition\Data\Multi
         foreach ($targetGroups as $targetGroup) {
             $options[] = [
                 'value' => $targetGroup->getId(),
-                'key' => $targetGroup->getName(),
+                'key'   => $targetGroup->getName(),
             ];
         }
 
@@ -45,8 +46,7 @@ class TargetGroupMultiselect extends Model\DataObject\ClassDefinition\Data\Multi
     public static function __set_state(array $data): static
     {
         $obj = parent::__set_state($data);
-        $options = $obj->getOptions();
-        if (\Pimcore::inAdmin() || empty($options)) {
+        if (\Pimcore::inAdmin()) {
             $obj->configureOptions();
         }
 
@@ -73,5 +73,26 @@ class TargetGroupMultiselect extends Model\DataObject\ClassDefinition\Data\Multi
     public function getFieldType(): string
     {
         return 'targetGroupMultiselect';
+    }
+
+    public function __wakeup(): void
+    {
+        $this->init();
+    }
+
+    /**
+     * @return $this
+     *
+     * @internal
+     *
+     */
+    private function init(): static
+    {
+        $options = $this->getOptions();
+        if (empty($options)) {
+            $this->configureOptions();
+        }
+
+        return $this;
     }
 }
