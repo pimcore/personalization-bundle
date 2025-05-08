@@ -49,7 +49,7 @@ jobs:
                 run: |
                     if [ ! -z "$PIMCORE_VERSION" ]; then
                           composer require --no-update pimcore/pimcore:${PIMCORE_VERSION}
-                          composer require --no-update pimcore/admin-ui-classic-bundle:1.x-dev
+                          composer require --no-update pimcore/admin-ui-classic-bundle:1.7
                     fi                  
 
             -   name: "Install dependencies with Composer"
