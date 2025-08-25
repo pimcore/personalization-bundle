@@ -101,7 +101,7 @@ which is called by the targeting engine for every action registered with the `re
 
 To make your action handler appear in the admin UI, you need to create and register a JS class defining the admin interface
 for your action. Create a class extending `pimcore.settings.targeting.action.abstract` and register it to the system by
-calling `pimcore.settings.targeting.actions.register()`. 
+calling `pimcore.bundle.personalization.settings.actions.register()`. 
 
 Have a look at [this bundle's actions](https://github.com/pimcore/personalization-bundle/blob/main/public/js/settings/actions.js)
 and the [Customer Management Framework](https://github.com/pimcore/customer-data-framework/blob/master/src/Resources/public/js/pimcore/targeting/actions.js)
