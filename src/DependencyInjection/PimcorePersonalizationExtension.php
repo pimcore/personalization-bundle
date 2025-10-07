@@ -94,4 +94,16 @@ class PimcorePersonalizationExtension extends ConfigurableExtension
             ->findDefinition(TargetingEnableService::class)
             ->setArgument('$enabled', $config['enabled'] ?? false);
     }
+
+        public function prepend(ContainerBuilder $container): void
+    {
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__ . '/../../config')
+        );
+
+        if ($container->hasExtension('pimcore_studio_ui')) {
+            $loader->load('studio_ui.yaml');
+        }
+    }
 }

@@ -66,3 +66,7 @@ node_modules/
 /plugins/
 /tools/
 /website/
+
+
+# Studio related files
+/assets/studio/node_modules
