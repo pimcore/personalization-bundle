@@ -95,7 +95,7 @@ class PimcorePersonalizationExtension extends ConfigurableExtension
             ->setArgument('$enabled', $config['enabled'] ?? false);
     }
 
-        public function prepend(ContainerBuilder $container): void
+    public function prepend(ContainerBuilder $container): void
     {
         $loader = new YamlFileLoader(
             $container,
