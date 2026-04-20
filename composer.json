@@ -26,16 +26,15 @@
         "pimcore/admin-ui-classic-bundle": "^1.0.6"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^12.5.23 || ^13.1.7",
         "phpstan/phpstan": "^1.10.5",
         "phpstan/phpstan-symfony": "^1.2.14",
-        "codeception/phpunit-wrapper": "^9",
-        "codeception/codeception": "^5.0.10",
+        "codeception/codeception": "^5.3.5",
         "codeception/module-asserts": "^2",
         "codeception/module-symfony": "^3.1.1"
     },
     "conflict": {
-       "symfony/string": "<6.0"
+        "symfony/string": "<6.0"
     },
     "autoload": {
         "psr-4": {
