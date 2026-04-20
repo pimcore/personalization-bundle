@@ -1,5 +1,15 @@
 # Behavioral Targeting and Personalization 
 
+> [!IMPORTANT]
+> ## This Repository Has Been Archived
+>
+> This bundle has moved to the Pimcore Enterprise Edition. The GPL version is **EOL** and will no longer receive updates.
+>
+> - **Enterprise repository:** The updated and supported version is available at [ee-personalization-bundle](https://github.com/pimcore/ee-personalization-bundle) (access is granted by your Pimcore contact person when you have a valid enterprise subscription).
+> - **LTS support:** For long-term support, please use our support portal at [get.support.pimcore.com](https://get.support.pimcore.com/) (access is granted by your Pimcore contact person when you have a valid enterprise subscription).
+> - **Community support:** For community help and general questions, head over to [Pimcore Discussions](https://github.com/orgs/pimcore/discussions).
+
+
 Pimcore provides a very powerful integrated behavioral targeting and personalization engine. With this toolkit, it is possible to profile visitors based on their behavior, assign target groups to them and provide personalized content to 
 these target groups. This makes it possible to show your customers contextual, relevant, and personalized content.
 
